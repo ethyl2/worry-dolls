@@ -1,0 +1,43 @@
+.linkToForm {
+    color: red;
+    font-weight: bolder;
+}
+
+section#tellUrWorries {
+    color: white;
+    padding: 0 100px;
+    margin-top: 20px;
+}
+
+.worryForm {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    background-image: url("static/images/doll.jpg");
+}
+
+.worryForm label {
+    font-weight: bolder;
+}
+
+label mark {
+    background-color: darkgreen;
+}
+
+.worryForm textarea {
+    font-style: italic;
+    border: 3px solid darkgreen;
+    color: darkgreen;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.button {
+    text-align: center;
+}
+
+button {
+    background-color: darkgreen;
+    border: 1px solid white;
+}
