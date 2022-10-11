@@ -18,4 +18,5 @@ Contributions greatly welcomed!
 - An animation of putting a pillow on top of the dolls when the user is done telling their worries.
 - List of mental health resources, in case users could use more help.
 - More explanation and background about worry dolls?
+- Favicon, social sharing, meta tags in head (og-image, etc.)
 - Any other ideas?
