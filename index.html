@@ -66,18 +66,27 @@
     <main class="container mx-auto flex flex-col items-center justify-center pt-8 rounded-md overflow-hidden">
       <img src="./static/images/worry-dolls.png" alt="worry dolls" class="rounded-md"/>
     </main>
-    <section id="tellUrWorries">
-      <div>
-        <form>
+    <section id="tellUrWorries" class="w-full">
+      <div class="w-full">
+        <form id="worry-form" class="w-full">
           <div class="form-group worryForm">
             <label class="control-label">
               <mark>Please tell us your worries!! We are listening!</mark>
             </label>
-            <div>
-              <textarea type="text" class="form-control" rows="10" cols="145" placeholder="Start Venting out..."></textarea>
+            <div class="w-full">
+              <textarea
+                id="worry"
+                class="form-control w-full"
+                rows="8"
+                placeholder="Start venting out...">
+              </textarea>
             </div>
             <div class="button">
-              <button class="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <button
+                id="submit-worry"
+                type="submit"
+                class="hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+              >
                 Send it & Your Worries are gone!
               </button>
             </div>
@@ -85,6 +94,41 @@
         </form>
       </div>
     </section>
+
+    <section class="flex flex-col items-center justify-center space-y-6">
+      <div>
+        <p class="text-white text-center">Well, the dolls know what your worries are.</p>
+        <p class="text-white text-center">If you really need to revisit your worries, click the button below and they will
+          remind you. But don't stress, okay?</p>
+      </div>
+
+      <button type="button" id="review-worries" class="bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Review what you've told the worry dolls</button>
+      <ul id="worries-list" class="text-white list-disc"></ul>
+    </section>
     <script src="" async defer></script>
+    <script>
+      const worriesFromSession = JSON.parse(window.sessionStorage.getItem('worries'))
+      let worryArray = worriesFromSession ?? []
+      const worryForm = document.getElementById('worry-form')
+      const worryInput = document.getElementById('worry')
+      const reviewButton = document.getElementById('review-worries')
+      const worriesList = document.getElementById('worries-list')
+
+      worryForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        worryArray.push(worryInput.value.trim())
+        window.sessionStorage.setItem('worries', JSON.stringify(worryArray))
+        worryInput.value = ''
+      })
+
+      reviewButton.addEventListener('click', () => {
+        const worries = JSON.parse(window.sessionStorage.getItem('worries'))
+        Array.from(worries).forEach(worry => {
+          const listEl = document.createElement('li')
+          listEl.textContent = worry
+          worriesList.append(listEl)
+        })
+      })
+    </script>
   </body>
 </html>
