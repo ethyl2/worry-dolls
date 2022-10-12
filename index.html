@@ -18,26 +18,53 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed bg-purple-700 w-full text-yellow-300">
+      <div class="container h-full justify-center">
+        <ul class="float-left">
+          <img src="./static/images/dollTitle.jpg" class="h-14 mr-3">
+        </ul>
+        <a class="navbar-brand text-5xl float-left" href="#">Virtual Worry Dolls</a>
+        <div class="collapse navbar-collapse float-right p-5" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto italic font-bold">
+            <li class="nav-item active float-left">
+              <a class="nav-link px-3" href="#">Home</a>
+            </li>
+            <li class="nav-item float-left">
+              <a class="nav-link px-4" href="#tellUrWorries">Tell Your Worries</a>
+            </li>
+            <li class="nav-item float-left">
+              <a class="nav-link px-4" href="#history">History</a>
+            </li>
+            <li class="nav-item float-left">
+              <a class="nav-link px-4" href="#mentalHealth">Mental Health Resources</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
     <header>
       <div class="container mx-auto text-white text-center text-lg flex flex-col items-center justify-center space-y-6">
-        <h1 class="text-4xl text-purple-400 text-center font-semibold pt-8">Virtual Worry Dolls</h1>
-        <div class="flex flex-col items-center justify-center space-y-2">
-          <p class="text-2xl leading-loose">Worry Dolls <span class="italic">(Muñeca quitapena)</span> are tiny, hand-made dolls <br />from Guatemala that serve an important purpose.</p>
+        <div class="flex flex-col items-center justify-center space-y-2 mt-20">
+          <p class="text-2xl leading-loose"><span class="text-yellow-300">Worry Dolls </span><span class="italic">(Muñeca quitapena)</span> are tiny, hand-made dolls <br />from Guatemala that serve an important purpose.</p>
           <p>Before going to bed each night, you can tell your worries to them before placing them under your pillow.</p>
           <p>And then you don't have to worry about those worries anymore, and you can sleep more soundly.</p>
           <p>Legend has it that before morning, the dolls will gift you the wisdom and knowledge to eliminate your worries.</p>
           <p>Wait, you don't happen to have any worry dolls? Well, here are some <span class="italic">virtual</span> worry dolls.</p>
-          <p class="linkToForm"><a href="#tellUrWorries">Tell them your worries. They want to help.</a></p>
+          <p class="text-red-500 font-bold"><a href="#tellUrWorries">Tell them your worries. They want to help.</a></p>
         </div>
       </div>
     </header>
     <main class="container mx-auto flex flex-col items-center justify-center pt-8 rounded-md overflow-hidden">
       <img src="./static/images/worry-dolls.png" alt="worry dolls" class="rounded-md"/>
     </main>
-    <section id="tellUrWorries">
-      <div>
+
+    <!-- Form to tell the worries -->
+    <section id="tellUrWorries" class="text-white mt-5">
+      <div class="py-10">
         <form>
-          <div class="form-group worryForm">
+          <div class="form-group worryForm bg-purple-400">
             <label class="control-label">
               <mark>Please tell us your worries!! We are listening!</mark>
             </label>
@@ -46,12 +73,22 @@
             </div>
             <div class="button">
               <button class="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Send it & Your Worries are gone!
+                SEND IT TO US. YOUR WORRIES ARE GONE!
               </button>
             </div>
           </div>
         </form>
       </div>
+    </section>
+
+    <!-- History and Use of Worry Dolls -->
+    <section id="history" class="bg-black text-center h-20 text-yellow-300">
+      <h1>History</h1>
+    </section>
+
+    <!-- Mental Health Resources -->
+    <section id = "mentalHealth" class="bg-yellow-300 text-center text-black h-20">
+      <h1>Mental Health Resources</h1>
     </section>
     <script src="" async defer></script>
   </body>

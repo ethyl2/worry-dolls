@@ -1,19 +1,21 @@
-.linkToForm {
-    color: red;
-    font-weight: bolder;
+.navbar {
+    height: 75px;
+    padding: 5px 5px 5px 10px;
+}
+
+.nav-link:active {
+    color: aliceblue;
 }
 
 section#tellUrWorries {
-    color: white;
     padding: 0 100px;
-    margin-top: 20px;
+    background-image: url("static/images/doll.jpg");
 }
 
 .worryForm {
     border: 1px solid white;
     border-radius: 10px;
     padding: 20px;
-    background-image: url("static/images/doll.jpg");
 }
 
 .worryForm label {
