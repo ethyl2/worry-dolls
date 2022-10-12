@@ -24,6 +24,11 @@ section#tellUrWorries {
 
 label mark {
     background-color: darkgreen;
+    padding: 0.75em;
+    border-radius: 1em;
+    color: white;
+    margin: 1rem;
+    display: block;
 }
 
 .worryForm textarea {
@@ -42,4 +47,12 @@ label mark {
 button {
     background-color: darkgreen;
     border: 1px solid white;
+}
+
+
+@media(max-width: 500px) {
+  section#tellUrWorries {
+      padding: 0 24px;
+      margin-top: 20px;
+    }
 }

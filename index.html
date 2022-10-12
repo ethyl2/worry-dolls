@@ -2,15 +2,47 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Virtual Worry Dolls</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <meta name="description" content="Virtual worry dolls. Tell them your worries so you can sleep soundly.">
+    <meta name="keywords" content="Worry dolls, Virtual worry dolls, anxiety, mental health, worry">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="#">
+
+    <!-- FAVICON -->
+    <!-- Favicon image taken from https://www.reshot.com/free-svg-icons/item/playing-with-doll-ERYF574XCH/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+
+
+    <!-- SOCIAL MEDIA INTEGRATION -->
+    <!-- Facebook, LinkedIn, Google -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Virtual Worry Dolls" />
+    <meta property="og:description" content="Virtual worry dolls. Tell them your worries so you can sleep soundly." />
+    <meta name="image" property="og:image" content="URL TO IMAGE" /><!-- URL of image to be displayed when your site is linked to -->
+    <meta property="og:image:alt" content="ALT TEXT FOR IMAGE" /> <!-- Alt text for above image - an accessibility win -->
+    <meta property="og:url" content="#" /> <!-- Your page's URL -->
+    <meta property="og:site_name" content="Virtual Worry Dolls" />
+    <meta name="author" content="Heather Nuffer">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Virtual Worry Dolls">
+    <meta name="twitter:description" content="Virtual worry dolls. Tell them your worries so you can sleep soundly.">
+    <meta name="twitter:image" content="URL TO IMAGE"> <!-- URL of image to be displayed when your site is linked to. This image must be less than 5MB, and either JPG, PNG, WEBP, or GIF -->
+    <meta name="twitter:image:alt" content="ALT TEXT FOR IMAGE"> <!-- Alt text for above image - an accessibility win -->
+    <meta name="twitter:site" content="@USERNAME"> <!-- The site's Twitter handle -->
+    <meta name="twitter:creator" content="@USERNAME"> <!-- Your personal Twitter handle -->
+
+    <title>Virtual Worry Dolls</title>
+
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
   </head>
@@ -59,7 +91,7 @@
     <main class="container mx-auto flex flex-col items-center justify-center pt-8 rounded-md overflow-hidden">
       <img src="./static/images/worry-dolls.png" alt="worry dolls" class="rounded-md"/>
     </main>
-
+    
     <!-- Form to tell the worries -->
     <section id="tellUrWorries" class="text-white mt-5">
       <div class="py-10">
@@ -82,14 +114,45 @@
     </section>
 
     <!-- History and Use of Worry Dolls -->
-    <section id="history" class="bg-black text-center h-20 text-yellow-300">
+    <section id="history" class="bg-yellow-300 text-center h-20 text-black">
       <h1>History</h1>
     </section>
 
     <!-- Mental Health Resources -->
-    <section id = "mentalHealth" class="bg-yellow-300 text-center text-black h-20">
-      <h1>Mental Health Resources</h1>
+    <section id = "mentalHealth" class="flex flex-col items-center justify-center space-y-6">
+      <div>
+        <p class="text-white text-center">Well, the dolls know what your worries are.</p>
+        <p class="text-white text-center">If you really need to revisit your worries, click the button below and they will
+          remind you. But don't stress, okay?</p>
+      </div>
+
+      <button type="button" id="review-worries" class="bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Review what you've told the worry dolls</button>
+      <ul id="worries-list" class="text-white list-disc"></ul>
     </section>
     <script src="" async defer></script>
+    <script>
+      const worriesFromSession = JSON.parse(window.sessionStorage.getItem('worries'))
+      let worryArray = worriesFromSession ?? []
+      const worryForm = document.getElementById('worry-form')
+      const worryInput = document.getElementById('worry')
+      const reviewButton = document.getElementById('review-worries')
+      const worriesList = document.getElementById('worries-list')
+
+      worryForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        worryArray.push(worryInput.value.trim())
+        window.sessionStorage.setItem('worries', JSON.stringify(worryArray))
+        worryInput.value = ''
+      })
+
+      reviewButton.addEventListener('click', () => {
+        const worries = JSON.parse(window.sessionStorage.getItem('worries'))
+        Array.from(worries).forEach(worry => {
+          const listEl = document.createElement('li')
+          listEl.textContent = worry
+          worriesList.append(listEl)
+        })
+      })
+    </script>
   </body>
 </html>
