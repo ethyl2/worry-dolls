@@ -12,11 +12,14 @@ Contributions greatly welcomed!
 
 - Make worry doll assets
 - Page designs
-- Add an input for people to type their worries.
 - Functionality to tell a different worry to each doll.
-- Save the worries, perhaps in local or session storage, in case they want to visit or modify them later.
+- Save the worries in something more permanent than session storage.
 - An animation of putting a pillow on top of the dolls when the user is done telling their worries.
 - List of mental health resources, in case users could use more help.
-- More explanation and background about worry dolls?
-- Favicon, social sharing, meta tags in head (og-image, etc.)
 - Any other ideas?
+
+## Contributors
+
+| [Heather Nuffer](https://github.com/ethyl2) | [Harine Murugan](https://github.com/HarineMurugan) | [Such6](https://github.com/Such6) | [Kera Cudmore](https://github.com/kera-cudmore)|
+|----------------- | --------------- | --------------- | -------------- |
+| [<img src="https://avatars.githubusercontent.com/u/6438167?v=4" width = "100" alt="Heather Nuffer" />](https://github.com/ethyl2) | [<img src="https://avatars.githubusercontent.com/u/92710085?v=4" width = "100" alt="Harine Murugan" />](https://github.com/HarineMurugan) | [<img src="https://avatars.githubusercontent.com/u/94823997?v=4" width = "100" alt="Such6" />](https://github.com/Such6) | [<img src="https://avatars.githubusercontent.com/u/92253071?v=4" width = "100" alt="Kera Cudmore" />](https://github.com/kera-cudmore) |
