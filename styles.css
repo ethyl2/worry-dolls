@@ -8,8 +8,12 @@
 }
 
 section#tellUrWorries {
-    padding: 0 100px;
     background-image: url("static/images/doll.jpg");
+}
+
+section#tellUrWorries, section#history, section#mentalHealth {
+    padding: 0 100px;
+    scroll-margin-top: 70px; /*To prevent navigated sections scrolling up behind the fixed header*/
 }
 
 .worryForm {
