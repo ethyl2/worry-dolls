@@ -41,9 +41,13 @@
     <meta name="twitter:site" content="@USERNAME"> <!-- The site's Twitter handle -->
     <meta name="twitter:creator" content="@USERNAME"> <!-- Your personal Twitter handle -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <title>Virtual Worry Dolls</title>
 
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
     <link href="styles.css" rel="stylesheet">
   </head>
   <body class="bg-black">
@@ -51,77 +55,118 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <header>
-      <div class="container mx-auto text-white text-center text-lg flex flex-col items-center justify-center space-y-6">
-        <h1 class="text-4xl text-purple-400 text-center font-semibold pt-8">Virtual Worry Dolls</h1>
-        <div class="flex flex-col items-center justify-center space-y-2">
-          <p class="text-2xl leading-loose">Worry Dolls <span class="italic">(Muñeca quitapena)</span> are tiny, hand-made dolls <br />from Guatemala that serve an important purpose.</p>
-          <p>Before going to bed each night, you can tell your worries to them before placing them under your pillow.</p>
-          <p>And then you don't have to worry about those worries anymore, and you can sleep more soundly.</p>
-          <p>Legend has it that before morning, the dolls will gift you the wisdom and knowledge to eliminate your worries.</p>
-          <p>Wait, you don't happen to have any worry dolls? Well, here are some <span class="italic">virtual</span> worry dolls.</p>
-          
-          
-          <p class="linkToForm"><a href="#tellUrWorries">Tell them your worries. They want to help.</a></p>
-        </div>
-      </div>
-    </header>
-    <main class="container mx-auto flex flex-col items-center justify-center pt-8 rounded-md overflow-hidden">
-      <img src="./static/images/worry-dolls.png" alt="worry dolls" class="rounded-md"/>
-    </main>
-    <section id="tellUrWorries" class="w-full">
-      <div class="w-full">
-        <form id="worry-form" class="w-full">
-          <div class="form-group worryForm">
-            <label class="control-label">
-              <mark>Please tell us your worries!! We are listening!</mark>
-            </label>
-            <div class="w-full">
-              <textarea
-                id="worry"
-                class="form-control w-full"
-                rows="8"
-                placeholder="Start venting out...">
-              </textarea>
-            </div>
-            <div class="button">
-              <button
-                id="submit-worry"
-                type="submit"
-                class="hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-              >
-                Send it & Your Worries are gone!
-              </button>
-            </div>
+      <div class="hero">
+        <div class="content">
+          <h1>Virtual Worry Dolls</h1>
+          <div>
+            <p class="emphasis">Worry Dolls <span>(Muñeca quitapena)</span> are tiny, hand-made dolls <br />from Guatemala that serve an important purpose.</p>
+            <p>Before going to bed each night, you can tell your worries to them before placing them under your pillow.</p>
+            <p>And then you don't have to worry about those worries anymore, and you can sleep more soundly.</p>
+            <p>Legend has it that before morning, the dolls will gift you the wisdom and knowledge to eliminate your worries.</p>
+            <p>Wait, you don't happen to have any worry dolls? Well, here are some <span>virtual</span> worry dolls.</p>
           </div>
-        </form>
-      </div>
+          <div class="actions">
+            <a class="btn" href="#tell">Tell them your worries. They want to help.</a>
+            <a class="more" href="#history">Read more about dolls</a>
+          </div>
+        </div>
+      <div class="divider-top"></div>
+    </header>
+
       
-      <section class="flex flex-col items-center justify-center space-y-6">
-        <div>
-          <p class="text-white text-center">Well, the dolls know what your worries are.</p>
-          <p class="text-white text-center">If you really need to revisit your worries, click the button below and they will
-            remind you. But don't stress, okay?</p>
+    <section id="tell" class="tellUrWorries">
+      <div class="pillow-dolls">
+        <div id="pillow" class="pulse-pillow">
+          <img src="/static/images/pillow.png">
+          <div class="fake-btn">Show my dolls</div>
         </div>
 
-        <button type="button" id="review-worries" class="bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Review what you've told the worry dolls</button>
-        <ul id="worries-list" class="text-white list-disc"></ul>
-      </section>
+      <div id="my-dolls" class="dolls">
+        <ul>
+          <li>
+            <div><img src="/static/images/doll-1.png"></div>
+            <div class="name">María</div>
+            <div class="actions">
+                <div class="review-worries">My worries <span>(0)</span></div>
+                <button data-doll="1" class="tell">Tell</button>
+            </div>
+          </li>
+                  
+          <li>
+            <div><img src="/static/images/doll-2.png"></div>
+            <div class="name">Alejandra</div>
+            <div class="actions">
+              <div class="review-worries">My worries <span>(0)<span></div>
+              <button data-doll="2" class="tell">Tell</button>
+            </div>
+          </li>
+                  
+          <li>
+            <div><img src="/static/images/doll-3.png"></div>
+            <div class="name">Claudia</div>
+            <div class="actions">
+              <div class="review-worries">My worries <span>(0)</span></div>
+              <button data-doll="3" class="tell">Tell</button>
+            </div>
+          </li>
+                  
+          <li>
+            <div><img src="/static/images/doll-4.png"></div>
+            <div class="name">Sofía</div>
+            <div class="actions">
+              <div class="review-worries">My worries <span>(0)</span></div>
+              <button data-doll="4" class="tell">Tell</button>
+            </div>
+          </li>
+        </ul>
+      </div>
 
-      <p class="text-2xl leading-loose pt-6">Read the fascinating history of Worry Dolls <span class="italic">(Muñeca quitapena)</span>tiny, hand-made dolls <br />The History dates back to the Mayan Culture.</p>
+
+      <div id="worries"></div>
+
+      </div>
+
+      
+    </section>
+    <section id="history">
+      <div class="shapedividers_com-4777"></div>
+      <div class="content">
+          <h2>Read the fascinating history of Worry Dolls <span>(Muñeca quitapena)</span> tiny, hand-made dolls</h2>
+          <h4>The History dates back to the Mayan Culture.</h4>
           <p>The Mayan legend tells (according to the Mayan sacred book the Popol Vuh) that when their gods met to form the Mayan world, their attempt to create humanity was fruitless.</p>
-           <p>"The first men were formed of stone, but they were so hard that they could not move"</p>
-            <p>"In the second attempt they tried it with mud, but with the first rain the men fell apart."</p>
-             <p>The Mayan story goes on to say that their gods agreed: "May they be made of corn!" And so it was that Ixmucané emerged, the goddess of that grain of corn.She was in charge of creating Mayan men and women.</p>
-             <p>Post-Mayan culture folklore says that after a while, the Corn Goddess Ixmucané transformed to reincarnate into doll rocks to protect the corn men and women that she helped create.</p>
-             <p That is why it is said that little dolls have the power to solve problems and concerns.</p>
+          <p>"The first men were formed of stone, but they were so hard that they could not move"</p>
+          <p>"In the second attempt they tried it with mud, but with the first rain the men fell apart."</p>
+          <p>The Mayan story goes on to say that their gods agreed: "May they be made of corn!" And so it was that Ixmucané emerged, the goddess of that grain of corn.She was in charge of creating Mayan men and women.</p>
+          <p>Post-Mayan culture folklore says that after a while, the Corn Goddess Ixmucané transformed to reincarnate into doll rocks to protect the corn men and women that she helped create.</p>
+          <p>That is why it is said that little dolls have the power to solve problems and concerns.</p>
 
- <p class="text-2xl leading-loose">The Use of Worry Dolls</p>
-  <p> The classic way of using them, is children putting them under their pillow at night, to take their worries away.</p>
- <p> The purpose of these dolls is to help children of all ages with their worries by expressing themselves out loud. It’s believed that for the worry dolls to work their magic, after the child has confessed their worries, they have to put the worry dolls under their pillow and go to sleep. In the morning all of their worries will be gone. </p>
-         
+          <h4>The Use of Worry Dolls</h4>
+          <p> The classic way of using them, is children putting them under their pillow at night, to take their worries away.</p>
+          <p> The purpose of these dolls is to help children of all ages with their worries by expressing themselves out loud. It’s believed that for the worry dolls to work their magic, after the child has confessed their worries, they have to put the worry dolls under their pillow and go to sleep. In the morning all of their worries will be gone. </p> 
+      
+          <div class="end"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path
+              d="M6.94 14.036c-.233.624-.43 1.2-.606 1.783.96-.697 2.101-1.139 3.418-1.304 2.513-.314 4.746-1.973 5.876-4.058l-1.456-1.455 1.413-1.415 1-1.001c.43-.43.915-1.224 1.428-2.368-5.593.867-9.018 4.292-11.074 9.818zM17 9.001L18 10c-1 3-4 6-8 6.5-2.669.334-4.336 2.167-5.002 5.5H3C4 16 6 2 21 2c-1 2.997-1.998 4.996-2.997 5.997L17 9.001z" />
+          </svg> </br>
+          𝓔𝓝𝓓</div>
+        </div>
     </section>
 
-    <script src="" async defer></script>
+    <footer>
+      <div class="content">
+        <p>Domain.com</p>
+        <span>|</span>
+        <a href="https://github.com/ethyl2/worry-dolls">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path
+          d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js" async defer></script>
 
     <script>
       const worriesFromSession = JSON.parse(window.sessionStorage.getItem('worries'))
