@@ -8,6 +8,15 @@ I hope to be able to make this a place where people can smile, journal a bit abo
 
 Contributions greatly welcomed!
 
+## Deployment
+
+https://ethyl2.github.io/worry-dolls/
+
+## Getting Started
+
+Fork or clone this project.
+If you use VS Code, you can click on index.html in the left navigation and select 'Open with live server'.
+
 ## TODO:
 
 - Make worry doll assets
