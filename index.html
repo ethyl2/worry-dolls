@@ -60,7 +60,9 @@
         <img src="./static/images/dollTitle.jpg" class="h-14 mr-3">
       </ul>
       <a class="navbar-brand text-5xl float-left" href="#">Virtual Worry Dolls</a>
-      <div class="collapse navbar-collapse float-right p-5" id="navbarSupportedContent">
+      <div
+        class="collapse navbar-collapse float-right p-5 bg-purple-700 sm:w-full lg:w-auto"
+        id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto italic font-bold">
           <li class="nav-item active float-left">
             <a class="nav-link px-3" href="#">Home</a>
@@ -82,7 +84,7 @@
   <!-- Header -->
   <header>
     <div class="container mx-auto text-white text-center text-lg flex flex-col items-center justify-center space-y-6">
-      <div class="flex flex-col items-center justify-center space-y-2 mt-20">
+      <div class="mt-96 flex flex-col items-center justify-center space-y-2 lg:mt-20">
         <p class="text-2xl leading-loose"><span class="text-yellow-300">Worry Dolls </span><span class="italic">(Muñeca
             quitapena)</span> are tiny, hand-made dolls <br />from Guatemala that serve an important purpose.</p>
         <p>Before going to bed each night, you can tell your worries to them before placing them under your pillow.</p>
@@ -102,13 +104,13 @@
   <!-- Form to tell the worries -->
   <section id="tellUrWorries" class="text-white mt-5">
     <div class="py-11">
-      <form>
+      <form id="worry-form">
         <div class="form-group worryForm bg-purple-400">
-          <label class="control-label">
-            <mark>Please tell us your worries!! We are listening!</mark>
+          <label class="text-center flex items-center justify-center" for="worry">
+            Please tell us your worries!! We are listening!
           </label>
           <div>
-            <textarea type="text" class="form-control" rows="12" cols="145"
+            <textarea id="worry" type="text" class="form-control w-full"
               placeholder="Start Venting out..."></textarea>
           </div>
           <div class="button">
@@ -157,32 +159,8 @@
       to put the worry dolls under their pillow and go to sleep. In the morning all of their worries will be gone. </p>
 
   </section>
-
-  <script src="" async defer></script>
-  <script>
-    const worriesFromSession = JSON.parse(window.sessionStorage.getItem('worries'))
-    let worryArray = worriesFromSession ?? []
-    const worryForm = document.getElementById('worry-form')
-    const worryInput = document.getElementById('worry')
-    const reviewButton = document.getElementById('review-worries')
-    const worriesList = document.getElementById('worries-list')
-
-    worryForm.addEventListener('submit', (e) => {
-      e.preventDefault()
-      worryArray.push(worryInput.value.trim())
-      window.sessionStorage.setItem('worries', JSON.stringify(worryArray))
-      worryInput.value = ''
-    })
-
-    reviewButton.addEventListener('click', () => {
-      const worries = JSON.parse(window.sessionStorage.getItem('worries'))
-      Array.from(worries).forEach(worry => {
-        const listEl = document.createElement('li')
-        listEl.textContent = worry
-        worriesList.append(listEl)
-      })
-    })
-  </script>
+  <footer class="flex items-center justify-center mt-12 bg-purple-700 text-white text-sm py-12">Copyright 2022</footer>
+  <script src="./js/index.js" async defer></script>
 </body>
 
 </html>
