@@ -54,27 +54,30 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed bg-purple-700 w-full text-yellow-300">
-    <div class="container h-full justify-center">
-      <ul class="float-left">
-        <img src="./static/images/dollTitle.jpg" class="h-14 mr-3">
-      </ul>
-      <a class="navbar-brand text-5xl float-left" href="#">Virtual Worry Dolls</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed bg-purple-700 w-full text-yellow-300 py-4">
+    <div class="container h-full justify-between flex items-center mx-auto">
+      <div>
+        <ul class="float-left">
+          <img src="./static/images/dollTitle.jpg" class="h-14 mr-3">
+        </ul>
+        <a class="navbar-brand text-5xl float-left smooth-scroll" href="#top">Virtual Worry Dolls</a>
+      </div>
+
       <div
         class="collapse navbar-collapse float-right p-5 bg-purple-700 sm:w-full lg:w-auto"
         id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto italic font-bold">
           <li class="nav-item active float-left">
-            <a class="nav-link px-3" href="#">Home</a>
+            <a class="nav-link px-3 smooth-scroll" href="#top">Home</a>
           </li>
           <li class="nav-item float-left">
-            <a class="nav-link px-4" href="#tellUrWorries">Tell Your Worries</a>
+            <a class="nav-link px-4 smooth-scroll" href="#tellUrWorries">Tell Your Worries</a>
           </li>
           <li class="nav-item float-left">
-            <a class="nav-link px-4" href="#mentalHealth">Mental Health Resources</a>
+            <a class="nav-link px-4 smooth-scroll" href="#mentalHealth">Mental Health Resources</a>
           </li>
           <li class="nav-item float-left">
-            <a class="nav-link px-4" href="#history">History</a>
+            <a class="nav-link px-4 smooth-scroll" href="#history">History</a>
           </li>
         </ul>
       </div>
@@ -82,52 +85,63 @@
   </nav>
 
   <!-- Header -->
-  <header>
-    <div class="container mx-auto text-white text-center text-lg flex flex-col items-center justify-center space-y-6">
+  <header id="top" class="pt-24">
+    <div class="container mx-auto text-white text-center text-base md:text-lg flex flex-col items-center justify-center space-y-6">
       <div class="mt-96 flex flex-col items-center justify-center space-y-2 lg:mt-20">
-        <p class="text-2xl leading-loose"><span class="text-yellow-300">Worry Dolls </span><span class="italic">(Muñeca
+        <p class="text-xl md:text-2xl leading-loose"><span class="text-yellow-300">Worry Dolls </span><span class="italic">(Muñeca
             quitapena)</span> are tiny, hand-made dolls <br />from Guatemala that serve an important purpose.</p>
         <p>Before going to bed each night, you can tell your worries to them before placing them under your pillow.</p>
         <p>And then you don't have to worry about those worries anymore, and you can sleep more soundly.</p>
-        <p>Legend has it that before morning, the dolls will gift you the wisdom and knowledge to eliminate your
+        <img src="./static/images/sleep-soundly.png" alt="sleep soundly" class="w-24"/>
+        <p class="mx-4">Legend has it that before morning, the dolls will gift you the wisdom and knowledge to eliminate your
           worries.</p>
         <p>Wait, you don't happen to have any worry dolls? Well, here are some <span class="italic">virtual</span> worry
           dolls.</p>
-        <p class="text-red-500 font-bold"><a href="#tellUrWorries">Tell them your worries. They want to help.</a></p>
+        <p class="text-red-500 font-bold"><a href="#tellUrWorries" class="smooth-scroll">Tell them your worries. They want to help.</a></p>
       </div>
     </div>
   </header>
-  <main class="container mx-auto flex flex-col items-center justify-center pt-8 rounded-md overflow-hidden">
-    <img src="./static/images/worry-dolls.png" alt="worry dolls" class="rounded-md" />
-  </main>
+  <div class="container mx-auto flex flex-col items-center justify-center pt-8 rounded-md overflow-hidden mb-12 md:mb-48">
+    <a href="#tellUrWorries" class="smooth-scroll">
+      <img src="./static/images/worry-dolls.png" alt="worry dolls" class="rounded-md" />
+    </a>
+  </div>
 
   <!-- Form to tell the worries -->
-  <section id="tellUrWorries" class="text-white mt-5">
+  <section id="tellUrWorries" class="text-white mb-12">
+    <h2 class="text-3xl font-bold text-center py-6 w-full bg-purple-700">The Listening Dolls</h2>
     <div class="py-11">
-      <form id="worry-form">
+      <form id="worry-form" class="max-w-3xl mx-auto">
         <div class="form-group worryForm bg-purple-400">
           <label class="text-center flex items-center justify-center" for="worry">
             Please tell us your worries!! We are listening!
           </label>
           <div>
             <textarea id="worry" type="text" class="form-control w-full"
-              placeholder="Start Venting out..."></textarea>
+              placeholder="Start venting out..."></textarea>
           </div>
           <div class="button">
             <button class="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              SEND IT TO US. YOUR WORRIES ARE GONE!
+              SEND & YOUR WORRIES WILL BE GONE!
             </button>
           </div>
         </div>
       </form>
     </div>
+    <div class="h-12 bg-purple-700 w-full md:h-20"></div>
   </section>
 
   <section  class="flex flex-col items-center justify-center space-y-6">
+    <h2 class="text-3xl font-bold text-center py-6 w-full text-white">Revisiting Your Worries</h2>
     <div>
-      <p class="text-white text-center">Well, the dolls know what your worries are.</p>
+      <p class="text-white text-center">The dolls have good memories; they know what your worries are.</p>
+      <div class="flex items-center justify-center space-x-4 py-4">
+        <img src="./static/images/doll1.png" alt="worry-doll" class="w-24" />
+        <img src="./static/images/doll2.png" alt="worry-doll" class="w-24" />
+        <img src="./static/images/doll3.png" alt="worry-doll" class="w-24" />
+      </div>
       <p class="text-white text-center">If you really need to revisit your worries, click the button below and they will
-        remind you. But don't stress, okay?</p>
+        remind you. Take a deep breath and don't stress while you read them, okay?</p>
     </div>
 
     <button type="button" id="review-worries"
@@ -139,313 +153,111 @@
   <!-- Mental Health Resources -->
   <section
     id="mentalHealth"
-    class="text-white py-8 mt-8 bg-blue-900"
-    style="padding-top: 3em !important; padding-bottom: 3em !important;"
+    class="text-white py-8 mt-8 w-full"
+    style="padding-top: 3em !important; padding-bottom: 3em !important; background: #340c74;"
   >
-    <h2 class="text-3xl font-bold text-center pb-3">Other Mental Health Resources</h2>
-    <ul class="list-disc space-y-2">
-      <li><span class="font-bold">List of Many Free Resources from O Magazine:</span>
-        <a href="https://www.oprah.com/omagazine/free-online-resources-for-mental-illness"
+    <div class="container mx-auto max-w-xs md:max-w-3xl">
+      <h2 class="text-3xl font-bold text-center pb-6">Other Mental Health Resources</h2>
+      <ul class="list-disc space-y-2">
+        <li><span class="font-bold">List of Many Free Resources from O Magazine:</span>
+          <a href="https://www.oprah.com/omagazine/free-online-resources-for-mental-illness"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            class="hover:text-yellow-300"
+          >Online Resources for Mental Illness</a></li>
+        <li><p><strong>
+          <a href="https://988lifeline.org/"
           target="_blank"
-          rel="noopener noreferrer nofollow"
-          class="hover:text-yellow-300"
-        >Online Resources for Mental Illness</a></li>
-      <li><p><strong>
-        <a href="https://988lifeline.org/"
-        target="_blank"
-          rel="noopener noreferrer nofollow"
-          class="hover:text-yellow-300">988 Suicide &amp; Crisis Lifeline</a></strong>
-          The Lifeline provides 24-hour, confidential support to anyone in suicidal crisis or emotional distress. Call or text
-          to connect with a trained crisis counselor.
-          <strong>Call or text <a href="tel:988" class="hover:text-yellow-300">988</a>;
-            Llame al <a href="tel:988" class="hover:text-yellow-300">988</a>
-            (para ayuda en español)</strong>
-            <strong>Or use
-              <a href="https://988lifeline.org/"
-              class=""hover:text-yellow-300"
-              >Lifeline Chat</a> online</strong>.
-              Support is also available in English via
-              <a
-                href="https://988lifeline.org/"
-                class="hover:text-yellow-300"
-                rel="noopener nofollow noreferrer"
-                target="_blank">live chat</a>.
-            </p></li>
-      <li>
-        <span class="font-bold">US National Preventation Hotline:</span> If you are feeling overwhelmed with sadness, depression, or anxiety, or feel like you
-        want to harm yourself or others,
-        you can call the National Suicide Prevention Hotline at
-        <a href="tel:800-273-8255" class="hover:text-yellow-300">800-273-8255</a>
-      </li>
-    </ul>
+            rel="noopener noreferrer nofollow"
+            class="hover:text-yellow-300">988 Suicide &amp; Crisis Lifeline</a></strong>
+            The Lifeline provides 24-hour, confidential support to anyone in suicidal crisis or emotional distress. Call or text
+            to connect with a trained crisis counselor.
+            <strong>Call or text <a href="tel:988" class="hover:text-yellow-300">988</a>;
+              Llame al <a href="tel:988" class="hover:text-yellow-300">988</a>
+              (para ayuda en español)</strong>
+              <strong>Or use
+                <a href="https://988lifeline.org/"
+                class=""hover:text-yellow-300"
+                >Lifeline Chat</a> online</strong>.
+                Support is also available in English via
+                <a
+                  href="https://988lifeline.org/"
+                  class="hover:text-yellow-300"
+                  rel="noopener nofollow noreferrer"
+                  target="_blank">live chat</a>.
+              </p></li>
+        <li>
+          <span class="font-bold">US National Preventation Hotline:</span> If you are feeling overwhelmed with sadness, depression, or anxiety, or feel like you
+          want to harm yourself or others,
+          you can call the National Suicide Prevention Hotline at
+          <a href="tel:800-273-8255" class="hover:text-yellow-300">800-273-8255</a>
+        </li>
+      </ul>
+    </div>
   </section>
 
   <!-- History and Use of Worry Dolls -->
-  <section id="history" class="text-white w-full">
-    <p class="text-2xl leading-loose pt-6">Read the fascinating history of Worry Dolls <span class="italic">(Muñeca
-        quitapena)</span>tiny, hand-made dolls <br />The History dates back to the Mayan Culture.</p>
+  <section id="history" class="text-white w-full mt-12 max-w-xs md:max-w-3xl mx-auto flex flex-col items-start justify-start space-y-2">
+    <h2 class="text-3xl font-bold text-center pb-3 w-full">Worry Dolls History</h2>
+
+    <h3 class="text-2xl leading-loose">Mayan Legends</h3>
+    <p>The history dates back to the Mayan culture.</p>
     <p>The Mayan legend tells (according to the Mayan sacred book the Popol Vuh) that when their gods met to form the
       Mayan world, their attempt to create humanity was fruitless.</p>
-    <p>"The first men were formed of stone, but they were so hard that they could not move"</p>
+    <p>"The first men were formed of stone, but they were so hard that they could not move."</p>
     <p>"In the second attempt they tried it with mud, but with the first rain the men fell apart."</p>
     <p>The Mayan story goes on to say that their gods agreed: "May they be made of corn!" And so it was that Ixmucané
-      emerged, the goddess of that grain of corn.She was in charge of creating Mayan men and women.</p>
+      emerged, the goddess of corn. She was in charge of creating Mayan men and women.</p>
     <p>Post-Mayan culture folklore says that after a while, the Corn Goddess Ixmucané transformed to reincarnate into
       doll rocks to protect the corn men and women that she helped create.</p>
-    <p That is why it is said that little dolls have the power to solve problems and concerns.</p>
+    <p>That is why it is said that little dolls have the power to solve problems and concerns.</p>
 
-    <p class="text-2xl leading-loose">The Use of Worry Dolls</p>
-    <p> The classic way of using them, is children putting them under their pillow at night, to take their worries away.
+    <h3 class="text-2xl leading-loose pt-6">The Use of Worry Dolls</h3>
+    <p> The classic way of using them is that children put them under their pillow at night, to take their worries away.
     </p>
     <p> The purpose of these dolls is to help children of all ages with their worries by expressing themselves out loud.
       It's believed that for the worry dolls to work their magic, after the child has confessed their worries, they have
-      to put the worry dolls under their pillow and go to sleep. In the morning all of their worries will be gone. </p>
-
+      to put the worry dolls under their pillow and go to sleep. In the morning all of their worries will be gone.</p>
+    <img src="./static/images/dollTitle.jpg" alt="worry dolls" class="mx-auto p-4 w-48 bg-white rounded"/>
   </section>
-  <footer class="flex flex-col items-center justify-center mt-12 bg-purple-700 text-white text-sm py-12">
-    Copyright 2022
-  <style>
-    [data-custom-class='body'],
-    [data-custom-class='body'] * {
-      background: transparent !important;
-    }
 
-    [data-custom-class='title'],
-    [data-custom-class='title'] * {
-      font-family: Arial !important;
-      font-size: 26px !important;
-      color: white !important;
-    }
+  <footer class="flex flex-col items-center justify-center mt-12 bg-purple-700 text-white text-sm py-12 space-y-4">
+    <a href="https://github.com/ethyl2/worry-dolls" target="_blank" rel="noopener noreferrer" class="hover:bg-yellow-600 p-1 rounded">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+        focusable="false" width="1.73em" height="1.5em" style="
+                    -ms-transform: rotate(360deg);
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                  " preserveAspectRatio="xMidYMid meet" viewBox="0 0 1227.825 1000">
+        <path
+          d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
+          fill="white" />
+      </svg>
+      <span class="sr-only">GitHub</span>
+    </a>
+    <a href="./disclaimer.html" target="_blank" class="text-xs underline hover:text-yellow-200">Disclaimer</a>
+    <p>Copyright 2022 Virtual Worry Dolls</p>
 
-    [data-custom-class='subtitle'],
-    [data-custom-class='subtitle'] * {
-      font-family: Arial !important;
-      color: white !important;
-      font-size: 14px !important;
-    }
-
-    [data-custom-class='heading_1'],
-    [data-custom-class='heading_1'] * {
-      font-family: Arial !important;
-      font-size: 19px !important;
-      color: white !important;
-    }
-
-    [data-custom-class='heading_2'],
-    [data-custom-class='heading_2'] * {
-      font-family: Arial !important;
-      font-size: 17px !important;
-      color: white !important;
-    }
-
-    [data-custom-class='body_text'],
-    [data-custom-class='body_text'] * {
-      color: white !important;
-      font-size: 14px !important;
-      font-family: Arial !important;
-    }
-
-    [data-custom-class='link'],
-    [data-custom-class='link'] * {
-      color: white !important;
-      font-size: 14px !important;
-      font-family: Arial !important;
-      word-break: break-word !important;
-    }
-  </style>
-
-  <div data-custom-class="body" class="container text-xs">
-    <div>
-      <div align="center" class="MsoNormal" data-custom-class="title" style="text-align: left; line-height: 1.5;"><a
-          name="_4r5vko5di6yg"></a><strong><span style="line-height: 150%; font-size: 26px;">DISCLAIMER</span></strong>
-      </div>
-      <div align="center" class="MsoNormal" style="text-align:center;line-height:150%;"><a name="_l2jmcqu2bv4x"></a></div>
-      <div align="center" class="MsoNormal" data-custom-class="subtitle" style="text-align: left; line-height: 150%;"><br>
-      </div>
-      <div align="center" class="MsoNormal" data-custom-class="subtitle" style="text-align: left; line-height: 150%;">
-        <span style="color: rgb(127,127,127); font-size: 15px; text-align: justify;"><strong>Last updated </strong>
-          <bdt class="block-container question question-in-editor" data-id="f06b270d-4b70-bc53-bef4-2d8996dff70b"
-            data-type="question"><strong>October 01, 2022</strong></bdt>
-        </span></div>
-      <div class="MsoNormal" style="text-align: justify; line-height: 1.5;"><br></div>
-      <div class="MsoNormal" style="text-align: justify; line-height: 1.5;"><br></div>
-      <div class="MsoNormal" data-custom-class="heading_1"><a name="_xs0r05tcjblb"></a><strong><span
-            style="line-height: 115%; font-size: 19px;">WEBSITE DISCLAIMER</span></strong></div>
-    </div>
-    <div style="line-height: 1.2;"><br></div>
-    <div>
-      <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;"><span
-          style="color: rgb(89, 89, 89); font-size: 15px;">The information provided by <bdt
-            class="block-container question question-in-editor" data-id="1e91c6ac-db3b-ab40-09dc-333e7d471e6c"
-            data-type="question">Virtual Worry Dolls</bdt> (<bdt class="block-component"></bdt>"we," "us," or "our"<bdt
-            class="statement-end-if-in-editor"></bdt>) on <bdt class="block-component"></bdt>
-          <bdt class="question"><a href="https://ethyl2.github.io/worry-dolls/" target="_blank"
-              data-custom-class="link">https://ethyl2.github.io/worry-dolls/</a></bdt> (the <bdt class="block-component">
-          </bdt>"Site"<bdt class="statement-end-if-in-editor"></bdt>)<bdt class="block-component"></bdt>
-          </bdt> is for general informational purposes only. All information on <span
-            style="color: rgb(89, 89, 89); font-size: 15px;">
-            <bdt class="block-component"></bdt>the Site<bdt class="block-component"></bdt>
-            </bdt>
-          </span> is provided in good faith, however we make no representation or warranty of any kind, express or
-          implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any
-          information on <span style="color: rgb(89, 89, 89); font-size: 15px;"><span
-              style="color: rgb(89, 89, 89); font-size: 15px;">
-              <bdt class="block-component"></bdt>the Site<bdt class="block-component"></bdt>
-              </bdt>
-            </span></span>. UNDER NO CIRCUMSTANCE SHALL WE HAVE ANY LIABILITY TO YOU FOR ANY LOSS OR DAMAGE OF ANY KIND
-          INCURRED AS A RESULT OF THE USE OF <span style="color: rgb(89, 89, 89); font-size: 15px;"><span
-              style="color: rgb(89, 89, 89); font-size: 15px;">
-              <bdt class="block-component"></bdt>THE SITE<bdt class="block-component"></bdt>
-              </bdt>
-            </span></span> OR RELIANCE ON ANY INFORMATION PROVIDED ON <span
-            style="color: rgb(89, 89, 89); font-size: 15px;"><span style="color: rgb(89, 89, 89); font-size: 15px;"><span
-                style="color: rgb(89, 89, 89); font-size: 15px;">
-                <bdt class="block-component"></bdt>THE SITE<bdt class="block-component"></bdt>
-                </bdt>
-              </span></span></span>. YOUR USE OF <span style="color: rgb(89, 89, 89); font-size: 15px;"><span
-              style="color: rgb(89, 89, 89); font-size: 15px;"><span style="color: rgb(89, 89, 89); font-size: 15px;">
-                <bdt class="block-component"></bdt>THE SITE<bdt class="block-component"></bdt>
-                </bdt>
-              </span></span></span> AND YOUR RELIANCE ON ANY INFORMATION ON <span
-            style="color: rgb(89, 89, 89); font-size: 15px;"><span style="color: rgb(89, 89, 89); font-size: 15px;"><span
-                style="color: rgb(89, 89, 89); font-size: 15px;">
-                <bdt class="block-component"></bdt>THE SITE<bdt class="block-component"></bdt>
-                </bdt>
-              </span></span></span> IS SOLELY AT YOUR OWN RISK.
-        </span></div>
-    </div>
-    <div style="line-height: 1.2;"><br></div>
-    <div>
-      <div class="MsoNormal"><a name="_x1u8x12nt00e"></a></div>
-      <bdt class="block-container if" data-type="if" id="25d6783f-eaa7-3465-7bd8-31e107cc0931">
-        <bdt data-type="conditional-block">
-          <bdt class="block-component" data-record-question-key="external_disclaimer_option" data-type="statement"></bdt>
-          <bdt data-type="body">
-            <div class="MsoNormal" data-custom-class="heading_1"><strong><span
-                  style="line-height: 115%; font-size: 19px;">EXTERNAL LINKS
-                  DISCLAIMER<br></span></strong></div>
-          </bdt>
-        </bdt>
-      </bdt>
-    </div>
-    <div style="line-height: 1.2;"><br></div>
-    <div>
-      <bdt class="block-container if" data-type="if">
-        <bdt data-type="conditional-block">
-          <bdt data-type="body">
-            <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;"><span
-                style="color: rgb(89, 89, 89); font-size: 15px;"><span style="color: rgb(89, 89, 89); font-size: 15px;">
-                  <bdt class="block-component"></bdt>The Site<bdt class="block-component"></bdt>
-          </bdt></span></span><span style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"> may contain (or you
-              may be sent through <span style="color: rgb(89, 89, 89); font-size: 15px;"><span
-                  style="color: rgb(89, 89, 89); font-size: 15px;">
-                  <bdt class="block-component"></bdt>the Site<bdt class="block-component"></bdt>
-        </bdt></span></span>) links</span></span><span style="color: rgb(89, 89, 89); font-size: 15px;"> to other
-          websites or content belonging to or originating from third parties or links to
-          websites and features in banners or other advertising. Such external links are
-          not investigated, monitored, or checked for accuracy, adequacy, validity, reliability,
-          availability, or completeness by us. WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR
-          ASSUME RESPONSIBILITY FOR THE ACCURACY OR RELIABILITY OF ANY INFORMATION
-          OFFERED BY THIRD-PARTY WEBSITES LINKED THROUGH THE SITE OR ANY WEBSITE OR
-          FEATURE LINKED IN ANY BANNER OR OTHER ADVERTISING. WE WILL NOT BE A PARTY TO OR
-          IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND THIRD-PARTY PROVIDERS OF PRODUCTS OR
-          SERVICES.</span>
-    </div>
-    </bdt>
-    </bdt>
-    </bdt>
-  </div>
-  <div style="line-height: 1.2;"><br></div>
-  <div>
-    <bdt class="block-container if" data-type="if">
-      <bdt class="statement-end-if-in-editor" data-type="close"></bdt>
-    </bdt>
-    <div class="MsoNormal"><a name="_wfmrqujylbbj"></a></div>
-    <bdt class="block-container if" data-type="if" id="098cd9ba-027e-0afb-ec22-41e16cb68d79">
-      <bdt data-type="conditional-block">
-        <bdt class="block-component" data-record-question-key="professional_disclaimer_option" data-type="statement">
-        </bdt>
-        <bdt data-type="body">
-          <div class="MsoNormal" data-custom-class="heading_1"><strong><span
-                style="line-height: 115%; font-size: 19px;">PROFESSIONAL DISCLAIMER</span></strong></div>
-        </bdt>
-      </bdt>
-    </bdt>
-  </div>
-  <div style="line-height: 1.2;"><br></div>
-  <div>
-    <bdt class="block-container if" data-type="if">
-      <bdt data-type="conditional-block">
-        <bdt data-type="body">
-          <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;"><span
-              style="color: rgb(89, 89, 89); font-size: 15px;">
-              <bdt class="block-component"></bdt>The Site cannot and does not contain <bdt
-                class="block-container question question-in-editor" data-id="7744aaea-18c2-bcb8-7b80-f395643dfc29"
-                data-type="question">medical/health</bdt> advice. The <bdt
-                class="block-container question question-in-editor" data-id="89301322-2416-ef87-b4e0-ed76500d68ee"
-                data-type="question">medical/health</bdt> information is provided for general informational and
-              educational purposes only and is not a substitute for professional advice. Accordingly, before taking any
-              actions based upon such information, we encourage you to consult with the appropriate professionals. We do
-              not provide any kind of <bdt class="block-container question question-in-editor"
-                data-id="019392d9-ec21-89ec-6801-8fc62f11838c" data-type="question">medical/health</bdt> advice.<bdt
-                class="statement-end-if-in-editor"></bdt> THE USE OR RELIANCE OF ANY INFORMATION CONTAINED ON <span
-                style="color: rgb(89, 89, 89); font-size: 15px;"><span
-                  style="color: rgb(89, 89, 89); font-size: 15px;"><span style="color: rgb(89, 89, 89); font-size: 15px;">
-                    <bdt class="block-component"></bdt>THE SITE<bdt class="block-component"></bdt>
-        </bdt></span></span></span> IS SOLELY AT YOUR OWN RISK.</span>
-  </div>
-  </bdt>
-  </bdt>
-  </bdt>
-  </div>
-  <div style="line-height: 1.2;"><br></div>
-  <div>
-    <bdt class="block-container if" data-type="if">
-      <bdt class="statement-end-if-in-editor" data-type="close"></bdt>
-    </bdt>
-  </div>
-  <div>
-    <bdt class="block-component"></bdt>
-    </bdt>
-  </div>
-  <div>
-    <bdt data-type="conditional-block" style="text-align: start;">
-      <bdt data-type="body">
-        <div class="MsoNormal">
-          <bdt class="block-component"></bdt>
-      </bdt></span>
-    </bdt>
-    </bdt>
-    </bdt>
-    </bdt>
-    </bdt></span></bdt>
-    </bdt>
-    </bdt>
-  </div>
-  <style>
-    ul {
-      list-style-type: square;
-    }
-
-    ul>li>ul {
-      list-style-type: circle;
-    }
-
-    ul>li>ul>li>ul {
-      list-style-type: square;
-    }
-
-    ol li {
-      font-family: Arial;
-    }
-  </style>
-  </div>
-  <div style="color: #595959;font-size: 14px;font-family: Arial;padding-top:16px;">
-    This disclaimer was created using Termly's <a style="color: rgb(48, 48, 241) !important;"
-      href="https://termly.io/products/disclaimer-generator/">Disclaimer Generator</a>.
-  </div>
   </footer>
   <script src="./js/index.js" async defer></script>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function (event) {
+      const links = document.querySelectorAll("a.smooth-scroll")
+      for (const link of links) {
+        link.addEventListener("click", linkClickHandler)
+      }
+      function linkClickHandler(e) {
+        e.preventDefault()
+        const href = this.getAttribute("href")
+        const section = document.querySelector(href)
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+        const buffer = 120 // fixed nav height
+        scroll({
+          top: (section.getBoundingClientRect().top + scrollTop) - buffer,
+          behavior: "smooth"
+        })
+      }
+    });
+  </script>
 </body>
-
 </html>

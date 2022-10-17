@@ -17,10 +17,18 @@ function init() {
 
   reviewButton.addEventListener('click', () => {
     const worries = JSON.parse(window.sessionStorage.getItem('worries'))
+    clearWorriesUl()
     Array.from(worries).forEach(worry => {
       const listEl = document.createElement('li')
       listEl.textContent = worry
       worriesList.append(listEl)
     })
   })
+}
+
+function clearWorriesUl() {
+  const worriesList = document.getElementById('worries-list')
+  while(worriesList.firstChild) {
+    worriesList.removeChild(worriesList.lastChild)
+  }
 }
