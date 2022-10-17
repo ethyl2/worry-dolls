@@ -1,7 +1,3 @@
-.navbar {
-    height: 75px;
-    padding: 5px 5px 5px 10px;
-}
 
 .nav-link:active {
     color: aliceblue;
@@ -12,7 +8,6 @@ section#tellUrWorries {
 }
 
 section#tellUrWorries, section#history, section#mentalHealth {
-    padding: 0 100px;
     scroll-margin-top: 70px; /*To prevent navigated sections scrolling up behind the fixed header*/
 }
 

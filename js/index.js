@@ -17,6 +17,7 @@ function init() {
 
   reviewButton.addEventListener('click', () => {
     const worries = JSON.parse(window.sessionStorage.getItem('worries'))
+    clearWorriesUl()
     Array.from(worries).forEach(worry => {
       const listEl = document.createElement('li')
       listEl.textContent = worry
@@ -24,3 +25,28 @@ function init() {
     })
   })
 }
+
+function clearWorriesUl() {
+  const worriesList = document.getElementById('worries-list')
+  while(worriesList.firstChild) {
+    worriesList.removeChild(worriesList.lastChild)
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function (event) {
+      const links = document.querySelectorAll("a.smooth-scroll")
+      for (const link of links) {
+        link.addEventListener("click", linkClickHandler)
+      }
+      function linkClickHandler(e) {
+        e.preventDefault()
+        const href = this.getAttribute("href")
+        const section = document.querySelector(href)
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+        const buffer = 120 // fixed nav height
+        scroll({
+          top: (section.getBoundingClientRect().top + scrollTop) - buffer,
+          behavior: "smooth"
+        })
+      }
+    });
