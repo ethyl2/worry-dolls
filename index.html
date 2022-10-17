@@ -55,28 +55,26 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed bg-purple-700 w-full text-yellow-300 py-4">
-    <div class="container h-full justify-between flex items-center mx-auto">
-      <div>
-        <ul class="float-left">
-          <img src="./static/images/dollTitle.jpg" class="h-14 mr-3">
-        </ul>
-        <a class="navbar-brand text-5xl float-left smooth-scroll" href="#top">Virtual Worry Dolls</a>
-      </div>
+    <div class="container h-full justify-between flex items-center mx-auto flex-col md:flex-row">
+      <a href="#top" class="flex items-center justify-center">
+        <img src="./static/images/dollTitle.jpg" class="h-12 md:h-14 mr-3">
+        <span class="navbar-brand text-xl font-bold md:text-5xl float-left smooth-scroll">Virtual Worry Dolls</span>
+      </a>
 
       <div
-        class="collapse navbar-collapse float-right p-5 bg-purple-700 sm:w-full lg:w-auto"
+        class="collapse navbar-collapse md:p-5 bg-purple-700 sm:w-full lg:w-auto text-xs md:text-base"
         id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto italic font-bold">
-          <li class="nav-item active float-left">
+        <ul class="navbar-nav ml-auto italic font-bold flex items-center justify-center md:flex-row flex-col">
+          <li class="nav-item active">
             <a class="nav-link px-3 smooth-scroll" href="#top">Home</a>
           </li>
-          <li class="nav-item float-left">
+          <li class="nav-item">
             <a class="nav-link px-4 smooth-scroll" href="#tellUrWorries">Tell Your Worries</a>
           </li>
-          <li class="nav-item float-left">
+          <li class="nav-item">
             <a class="nav-link px-4 smooth-scroll" href="#mentalHealth">Mental Health Resources</a>
           </li>
-          <li class="nav-item float-left">
+          <li class="nav-item">
             <a class="nav-link px-4 smooth-scroll" href="#history">History</a>
           </li>
         </ul>
@@ -85,10 +83,10 @@
   </nav>
 
   <!-- Header -->
-  <header id="top" class="pt-24">
+  <header id="top" class="md:pt-24">
     <div class="container mx-auto text-white text-center text-base md:text-lg flex flex-col items-center justify-center space-y-6">
-      <div class="mt-96 flex flex-col items-center justify-center space-y-2 lg:mt-20">
-        <p class="text-xl md:text-2xl leading-loose"><span class="text-yellow-300">Worry Dolls </span><span class="italic">(Muñeca
+      <div class="flex flex-col items-center justify-center space-y-2 mt-44 lg:mt-20">
+        <p class="text-lg md:text-2xl md:leading-loose"><span class="text-yellow-300">Worry Dolls </span><span class="italic">(Muñeca
             quitapena)</span> are tiny, hand-made dolls <br />from Guatemala that serve an important purpose.</p>
         <p>Before going to bed each night, you can tell your worries to them before placing them under your pillow.</p>
         <p>And then you don't have to worry about those worries anymore, and you can sleep more soundly.</p>
@@ -102,7 +100,7 @@
     </div>
   </header>
   <div class="container mx-auto flex flex-col items-center justify-center pt-8 rounded-md overflow-hidden mb-12 md:mb-48">
-    <a href="#tellUrWorries" class="smooth-scroll">
+    <a href="#tellUrWorries" class="smooth-scroll mx-4 md:mx-auto">
       <img src="./static/images/worry-dolls.png" alt="worry dolls" class="rounded-md" />
     </a>
   </div>
@@ -128,7 +126,7 @@
         </div>
       </form>
     </div>
-    <div class="h-12 bg-purple-700 w-full md:h-20"></div>
+    <div class="hidden md:block h-12 bg-purple-700 w-full md:h-20"></div>
   </section>
 
   <section  class="flex flex-col items-center justify-center space-y-6">
@@ -136,11 +134,11 @@
     <div>
       <p class="text-white text-center">The dolls have good memories; they know what your worries are.</p>
       <div class="flex items-center justify-center space-x-4 py-4">
-        <img src="./static/images/doll1.png" alt="worry-doll" class="w-24" />
-        <img src="./static/images/doll2.png" alt="worry-doll" class="w-24" />
-        <img src="./static/images/doll3.png" alt="worry-doll" class="w-24" />
+        <img src="./static/images/doll1.png" alt="worry-doll" class="w-16 md:w-24" />
+        <img src="./static/images/doll2.png" alt="worry-doll" class="w-16 md:w-24" />
+        <img src="./static/images/doll3.png" alt="worry-doll" class="w-16 md:w-24" />
       </div>
-      <p class="text-white text-center">If you really need to revisit your worries, click the button below and they will
+      <p class="text-white text-center mx-4">If you really need to revisit your worries, click the button below and they will
         remind you. Take a deep breath and don't stress while you read them, okay?</p>
     </div>
 
@@ -153,11 +151,11 @@
   <!-- Mental Health Resources -->
   <section
     id="mentalHealth"
-    class="text-white py-8 mt-8 w-full"
+    class="text-white py-8 mt-8 w-full text-sm md:text-base"
     style="padding-top: 3em !important; padding-bottom: 3em !important; background: #340c74;"
   >
     <div class="container mx-auto max-w-xs md:max-w-3xl">
-      <h2 class="text-3xl font-bold text-center pb-6">Other Mental Health Resources</h2>
+      <h2 class="text-3xl font-bold text-center pb-6 text-yellow-300">Other Mental Health Resources</h2>
       <ul class="list-disc space-y-2">
         <li><span class="font-bold">List of Many Free Resources from O Magazine:</span>
           <a href="https://www.oprah.com/omagazine/free-online-resources-for-mental-illness"
@@ -197,10 +195,10 @@
   </section>
 
   <!-- History and Use of Worry Dolls -->
-  <section id="history" class="text-white w-full mt-12 max-w-xs md:max-w-3xl mx-auto flex flex-col items-start justify-start space-y-2">
-    <h2 class="text-3xl font-bold text-center pb-3 w-full">Worry Dolls History</h2>
+  <section id="history" class="text-white w-full mt-12 max-w-xs md:max-w-3xl mx-auto flex flex-col items-start justify-start space-y-2 text-sm md:text-base">
+    <h2 class="text-3xl font-bold text-center pb-3 w-full text-yellow-500">Worry Dolls History</h2>
 
-    <h3 class="text-2xl leading-loose">Mayan Legends</h3>
+    <h3 class="text-2xl leading-loose text-purple-300">Mayan Legends</h3>
     <p>The history dates back to the Mayan culture.</p>
     <p>The Mayan legend tells (according to the Mayan sacred book the Popol Vuh) that when their gods met to form the
       Mayan world, their attempt to create humanity was fruitless.</p>
@@ -212,10 +210,10 @@
       doll rocks to protect the corn men and women that she helped create.</p>
     <p>That is why it is said that little dolls have the power to solve problems and concerns.</p>
 
-    <h3 class="text-2xl leading-loose pt-6">The Use of Worry Dolls</h3>
+    <h3 class="text-2xl leading-loose pt-6 text-purple-300">The Use of Worry Dolls</h3>
     <p> The classic way of using them is that children put them under their pillow at night, to take their worries away.
     </p>
-    <p> The purpose of these dolls is to help children of all ages with their worries by expressing themselves out loud.
+    <p class="pb-10"> The purpose of these dolls is to help children of all ages with their worries by expressing themselves out loud.
       It's believed that for the worry dolls to work their magic, after the child has confessed their worries, they have
       to put the worry dolls under their pillow and go to sleep. In the morning all of their worries will be gone.</p>
     <img src="./static/images/dollTitle.jpg" alt="worry dolls" class="mx-auto p-4 w-48 bg-white rounded"/>
@@ -240,24 +238,5 @@
 
   </footer>
   <script src="./js/index.js" async defer></script>
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function (event) {
-      const links = document.querySelectorAll("a.smooth-scroll")
-      for (const link of links) {
-        link.addEventListener("click", linkClickHandler)
-      }
-      function linkClickHandler(e) {
-        e.preventDefault()
-        const href = this.getAttribute("href")
-        const section = document.querySelector(href)
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-        const buffer = 120 // fixed nav height
-        scroll({
-          top: (section.getBoundingClientRect().top + scrollTop) - buffer,
-          behavior: "smooth"
-        })
-      }
-    });
-  </script>
 </body>
 </html>
