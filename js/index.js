@@ -44,7 +44,6 @@ function init() {
     successMessageEl.classList.remove('hidden')
     successMessageEl.classList.add('block')
     setTimeout(() => {
-      console.log('here')
       submitWorryButton.classList.remove('hidden')
       submitWorryButton.classList.add('block')
       successMessageEl.classList.remove('block')
