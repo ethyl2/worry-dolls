@@ -54,7 +54,7 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed bg-purple-700 w-full text-yellow-300 py-4">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed bg-gradient-to-b from-purple-900 to-purple-700 w-full text-yellow-300 py-4">
     <div class="container h-full justify-between flex items-center mx-auto flex-col md:flex-row">
       <a href="#top" class="flex items-center justify-center">
         <img src="./static/images/dollTitle.jpg" class="h-12 md:h-14 mr-3">
@@ -62,7 +62,7 @@
       </a>
 
       <div
-        class="collapse navbar-collapse md:p-5 bg-purple-700 sm:w-full lg:w-auto text-xs md:text-base"
+        class="collapse navbar-collapse md:p-5 sm:w-full lg:w-auto text-xs md:text-base"
         id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto italic font-bold flex items-center justify-center md:flex-row flex-col">
           <li class="nav-item active">
@@ -107,26 +107,51 @@
 
   <!-- Form to tell the worries -->
   <section id="tellUrWorries" class="text-white mb-12">
-    <h2 class="text-3xl font-bold text-center py-6 w-full bg-purple-700">The Listening Dolls</h2>
+    <h2 class="text-3xl font-bold text-center py-6 w-full bg-gradient-to-b from-purple-900 to-purple-800">The Listening Dolls</h2>
+    <p class="text-lg bg-gradient-to-b from-purple-700 to-purple-600 text-center font-semibold py-2">Choose a Doll:</p>
+    <div class="flex items-center justify-center  space-x-4 bg-gradient-to-b from-purple-900 to-purple-900 py-8">
+      <button
+        id="doll1"
+        class="w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-md p-4 bg-black flex items-center justify-center hover:bg-gray-800 bg-cover bg-center bg-no-repeat border-8 border-black hover:border-gray-800"
+        style="background-image: url('./static/images/doll1.png')"
+      >
+        <span class="sr-only">Doll 1</span>
+      </button>
+
+      <button id="doll2"
+        class="w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-md p-4 bg-black flex items-center justify-center hover:bg-gray-800 bg-cover bg-center bg-no-repeat border-8 border-black hover:border-gray-800"
+        style="background-image: url('./static/images/doll2.png')">
+        <span class="sr-only">Doll 2</span>
+      </button>
+
+      <button id="doll3"
+        class="w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-md p-4 bg-black flex items-center justify-center hover:bg-gray-800 bg-cover bg-center bg-no-repeat border-8 border-black hover:border-gray-800"
+        style="background-image: url('./static/images/doll3.png')">
+        <span class="sr-only">Doll 3</span>
+      </button>
+
+    </div>
     <div class="py-11">
-      <form id="worry-form" class="max-w-3xl mx-auto">
-        <div class="form-group worryForm bg-purple-400">
+      <form id="worry-form" class="max-w-3xl mx-auto invisible">
+
+        <div class="form-group worryForm bg-gradient-to-b from-purple-700 to-purple-400">
           <label class="text-center flex items-center justify-center" for="worry">
-            Please tell us your worries!! We are listening!
+            <img id="listening-doll" src="./static/images/doll1.png" alt="worry-doll" class="w-16 md:w-24" />
+            <span id="listening-doll-message" class="triangle-border left">Please tell me your worries!! I'm listening!</span>
           </label>
           <div>
             <textarea id="worry" type="text" class="form-control w-full"
               placeholder="Start venting out..."></textarea>
           </div>
-          <div class="button">
-            <button class="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <div class="button flex items-center justify-center">
+            <button type="submit" id="submit-worry" class="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               SEND & YOUR WORRIES WILL BE GONE!
             </button>
           </div>
+          <p id="success-message" class="text-center font-semibold hidden" >Sent to the Worry Doll!</p>
         </div>
       </form>
     </div>
-    <div class="hidden md:block h-12 bg-purple-700 w-full md:h-20"></div>
   </section>
 
   <section  class="flex flex-col items-center justify-center space-y-6">
