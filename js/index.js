@@ -1,9 +1,21 @@
 window.addEventListener('load', init)
 
 const listeningDollMessages = {
-  doll1: 'Please tell me your worries! I\'m listening!',
-  doll2: 'Let me know what you are worried about.',
-  doll3: 'What is causing you worry right now?',
+  doll1: [
+    'Please tell me your worries! I\'m listening!',
+    'I\'m here and ready to hear about your worries!',
+    'Hello! What is bothering you this evening?',
+  ], 
+  doll2: [
+    'Let me know what you are worried about.',
+    'Ready for bedtime? First, tell me about your worries.',
+    'I want to help! What are you worried about?'
+  ],
+  doll3: [
+    'What is causing you worry right now?',
+    'Tell me your worries, please!',
+    'Why don\'t you tell me something that you are worried about?'
+  ]
 }
 
 function init() {
@@ -31,7 +43,8 @@ function init() {
       worryForm.classList.remove('invisible')
       worryForm.classList.add('visible')
       listeningDoll.src = `./static/images/${button.id}.png`
-      listeningDollMessage.textContent = listeningDollMessages[button.id]
+      const currentDollMessagesLength = listeningDollMessages[button.id].length
+      listeningDollMessage.textContent = listeningDollMessages[button.id][Math.floor(Math.random() * currentDollMessagesLength)]
     })
   })
 
