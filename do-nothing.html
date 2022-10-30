@@ -73,14 +73,22 @@
         <source src="./static/audio/birdsong.wav" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <div>
+    <div class="w-full max-w-xs md:max-w-2xl">
         <img class="max-w-xs md:max-w-2xl rounded mx-auto block" src="./static/images/clay-colored-thrush.jpg" alt="clay-colored thrush" />
-        <a href="https://en.wikipedia.org/wiki/File:Clay-coloured_thrush_(Turdus_grayi_casius)_2.jpg" 
-            target="_blank"
-            rel="nofollow noreferred noopener"
-            class="text-xs italic text-yellow-200 hover:text-yellow-400 font-semibold text-right block w-full pt-1"
-        >
-        Photographer: Charles J. Sharp</a>
+        <div class="flex items-center justify-between w-full pt-1 font-semibold text-yellow-200 text-xs italic">
+            <a href="https://en.wikipedia.org/wiki/File:Clay-coloured_thrush_(Turdus_grayi_casius)_2.jpg" 
+                target="_blank"
+                rel="nofollow noreferred noopener"
+                class="hover:text-yellow-400"
+            >
+            Photographer: Charles J. Sharp</a>
+            <a href="https://freesound.org/s/76378/" 
+                target="_blank"
+                rel="nofollow noreferred noopener"
+                class="hover:text-yellow-400"
+            >
+            Audio: soundhog</a>
+        </div>
     </div>
   </main>
   <footer class="flex flex-col items-center justify-center mt-12 bg-purple-700 text-white text-sm py-12 space-y-4">
