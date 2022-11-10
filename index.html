@@ -50,7 +50,7 @@
   <link href="styles.css" rel="stylesheet">
 </head>
 
-<body class="bg-black">
+<body class="bg-gradient-to-b from-gray-900 to-black">
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -99,7 +99,7 @@
       </div>
     </div>
   </header>
-  <div class="container mx-auto flex flex-col items-center justify-center pt-8 rounded-md overflow-hidden mb-12 md:mb-48">
+  <div class="container mx-auto flex flex-col items-center justify-center pt-8 overflow-hidden pb-12 md:pb-48">
     <a href="#tellUrWorries" class="smooth-scroll mx-4 md:mx-auto">
       <img src="./static/images/worry-dolls.png" alt="worry dolls" class="rounded-md" />
     </a>
@@ -155,22 +155,32 @@
     </div>
   </section>
 
-  <section  class="flex flex-col items-center justify-center space-y-6">
+  <section 
+    id="review-worries-section" 
+    class="flex flex-col items-center justify-center space-y-6 hidden"
+  >
     <h2 class="text-3xl font-bold text-center py-6 w-full text-white">Revisiting Your Worries</h2>
     <div>
-      <p class="text-white text-center">The dolls have good memories; they know what your worries are.</p>
-      <div class="flex items-center justify-center space-x-4 py-4">
-        <img src="./static/images/doll1.png" alt="worry-doll" class="w-16 md:w-24" />
-        <img src="./static/images/doll2.png" alt="worry-doll" class="w-16 md:w-24" />
-        <img src="./static/images/doll3.png" alt="worry-doll" class="w-16 md:w-24" />
-      </div>
+      <p class="text-white text-center">The dolls have very accurate memories; they remember what your worries are.</p>
       <p class="text-white text-center mx-4">If you really need to revisit your worries, click the button below and they will
-        remind you. Take a deep breath and don't stress while you read them, okay?</p>
+        remind you.</p>
+      <p class="text-white text-center mx-4">Take a deep breath and don't stress while you read them, okay?</p>
+      <button 
+        id="reviewing-dolls"
+        type="button"
+        class="border-0 flex flex-col items-center justify-center py-4 bg-purple-900 w-80 md:w-96 mx-auto rounded hover:bg-purple-700 m-2 mt-6"
+      >
+        <div class="flex items-center justify-center space-x-4">
+          <img src="./static/images/doll1.png" alt="worry-doll" class="w-16 md:w-24" />
+          <img src="./static/images/doll2.png" alt="worry-doll" class="w-16 md:w-24" />
+          <img src="./static/images/doll3.png" alt="worry-doll" class="w-16 md:w-24" />
+        </div>
+        <span id="review-button-message" class="text-white font-bold text-sm md:text-base px-4">
+          Review what you've told the worry dolls
+        </span>
+      </button>
     </div>
 
-    <button type="button" id="review-worries"
-      class="bg-purple-900 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Review what you've told the worry
-      dolls</button>
     <ul id="worries-list" class="text-white list-disc"></ul>
   </section>
 

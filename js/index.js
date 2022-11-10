@@ -18,18 +18,28 @@ const listeningDollMessages = {
   ]
 }
 
+let showWorries = false
+const worriesList = document.getElementById('worries-list')
+const reviewButton = document.getElementById('review-worries')
+const reviewingDollsEl = document.getElementById('reviewing-dolls')
+const reviewButtonMessageEl = document.getElementById('review-button-message')
+
 function init() {
   const worriesFromSession = JSON.parse(window.sessionStorage.getItem('worries'))
   let worryArray = worriesFromSession ?? []
   const worryForm = document.getElementById('worry-form')
   const worryInput = document.getElementById('worry')
-  const reviewButton = document.getElementById('review-worries')
-  const worriesList = document.getElementById('worries-list')
+  
   const listeningDoll = document.getElementById('listening-doll')
   const listeningDollMessage = document.getElementById('listening-doll-message')
   const submitWorryButton = document.getElementById('submit-worry')
   const successMessageEl = document.getElementById('success-message')
+  const reviewWorriesSection = document.getElementById('review-worries-section')
+  
 
+  if (worryArray.length > 0) {
+    reviewWorriesSection.classList.remove('hidden')
+  }
   const worryDollButtons = []
 
   for(let i = 1; i < 4; i++) {
@@ -56,6 +66,7 @@ function init() {
     submitWorryButton.classList.add('hidden')
     successMessageEl.classList.remove('hidden')
     successMessageEl.classList.add('block')
+    reviewWorriesSection.classList.remove('hidden')
     setTimeout(() => {
       submitWorryButton.classList.remove('hidden')
       submitWorryButton.classList.add('block')
@@ -64,15 +75,28 @@ function init() {
     }, 1000)
   })
 
-  reviewButton.addEventListener('click', () => {
+  
+  reviewingDollsEl.addEventListener('click', toggleShowWorries)
+
+}
+
+function toggleShowWorries() {
+  showWorries = !showWorries
+  clearWorriesUl()
+  if (showWorries) {
     const worries = JSON.parse(window.sessionStorage.getItem('worries'))
-    clearWorriesUl()
-    Array.from(worries).forEach(worry => {
-      const listEl = document.createElement('li')
-      listEl.textContent = worry
-      worriesList.append(listEl)
-    })
-  })
+   
+    if (worries) {
+      Array.from(worries).forEach(worry => {
+        const listEl = document.createElement('li')
+        listEl.textContent = `"${worry}"`
+        worriesList.append(listEl)
+      })
+    }
+    reviewButtonMessageEl.textContent = "Send your worries back"
+  } else {
+    reviewButtonMessageEl.textContent = "Review what you've told the worry dolls"
+  }
 }
 
 function clearWorriesUl() {
