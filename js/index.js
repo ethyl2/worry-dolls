@@ -5,7 +5,7 @@ const listeningDollMessages = {
     'Please tell me your worries! I\'m listening!',
     'I\'m here and ready to hear about your worries!',
     'Hello! What is bothering you this evening?',
-  ], 
+  ],
   doll2: [
     'Let me know what you are worried about.',
     'Ready for bedtime? First, tell me about your worries.',
@@ -29,13 +29,13 @@ function init() {
   let worryArray = worriesFromSession ?? []
   const worryForm = document.getElementById('worry-form')
   const worryInput = document.getElementById('worry')
-  
+
   const listeningDoll = document.getElementById('listening-doll')
   const listeningDollMessage = document.getElementById('listening-doll-message')
   const submitWorryButton = document.getElementById('submit-worry')
   const successMessageEl = document.getElementById('success-message')
   const reviewWorriesSection = document.getElementById('review-worries-section')
-  
+
 
   if (worryArray.length > 0) {
     reviewWorriesSection.classList.remove('hidden')
@@ -72,10 +72,12 @@ function init() {
       submitWorryButton.classList.add('block')
       successMessageEl.classList.remove('block')
       successMessageEl.classList.add('hidden')
+      worryForm.classList.add('invisible')
+      worryForm.classList.remove('visible')
     }, 1000)
   })
 
-  
+
   reviewingDollsEl.addEventListener('click', toggleShowWorries)
 
 }
@@ -85,7 +87,7 @@ function toggleShowWorries() {
   clearWorriesUl()
   if (showWorries) {
     const worries = JSON.parse(window.sessionStorage.getItem('worries'))
-   
+
     if (worries) {
       Array.from(worries).forEach(worry => {
         const listEl = document.createElement('li')

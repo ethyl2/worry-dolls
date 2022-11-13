@@ -131,10 +131,10 @@
       </button>
 
     </div>
-    <div class="py-11">
-      <form id="worry-form" class="max-w-3xl mx-auto invisible">
+    <div class="py-11 bg-center bg-no-repeat bg-contain" style="background-image: url('./static/images/pillow.png')">
+      <form id="worry-form" class="max-w-sm mx-auto invisible">
 
-        <div class="form-group worryForm bg-gradient-to-b from-purple-700 to-purple-400">
+        <div class="form-group worryForm rounded p-4 bg-gradient-to-b from-purple-700 to-purple-400 mx-auto">
           <label class="text-center flex items-center justify-center" for="worry">
             <img id="listening-doll" src="./static/images/doll1.png" alt="worry-doll" class="w-16 md:w-24" />
             <span id="listening-doll-message" class="triangle-border left">Please tell me your worries!! I'm listening!</span>
@@ -155,8 +155,8 @@
     </div>
   </section>
 
-  <section 
-    id="review-worries-section" 
+  <section
+    id="review-worries-section"
     class="flex flex-col items-center justify-center space-y-6 hidden"
   >
     <h2 class="text-3xl font-bold text-center py-6 w-full text-white">Revisiting Your Worries</h2>
@@ -165,7 +165,7 @@
       <p class="text-white text-center mx-4">If you really need to revisit your worries, click the button below and they will
         remind you.</p>
       <p class="text-white text-center mx-4">Take a deep breath and don't stress while you read them, okay?</p>
-      <button 
+      <button
         id="reviewing-dolls"
         type="button"
         class="border-0 flex flex-col items-center justify-center py-4 bg-purple-900 w-80 md:w-96 mx-auto rounded hover:bg-purple-700 m-2 mt-6"
