@@ -1,5 +1,10 @@
 window.addEventListener('load', init)
 
+function getCurrentYear() {
+  const currentYear = new Date().getFullYear()
+  document.getElementById('current-year').textContent = currentYear
+}
+
 const listeningDollMessages = {
   doll1: [
     'Please tell me your worries! I\'m listening!',
@@ -25,6 +30,7 @@ const reviewingDollsEl = document.getElementById('reviewing-dolls')
 const reviewButtonMessageEl = document.getElementById('review-button-message')
 
 function init() {
+  getCurrentYear()
   const worriesFromSession = JSON.parse(window.sessionStorage.getItem('worries'))
   let worryArray = worriesFromSession ?? []
   const worryForm = document.getElementById('worry-form')

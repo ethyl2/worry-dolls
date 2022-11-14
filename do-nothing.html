@@ -25,7 +25,7 @@
   <title>Do Nothing | Virtual Worry Dolls</title>
 
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  
+
 </head>
 
 <body class="bg-black min-h-screen">
@@ -63,9 +63,9 @@
   <header class="w-full font-bold text-lg md:text-4xl bg-purple-900 text-white text-center pt-40 sm:text-3xl sm:pt-48 md:pb-6 pb-4 lg:pt-36 lg:pb-4 xl:pt-32">
     <h1>Do Nothing!</h1>
   </header>
- 
+
   <main class="container text-white mx-auto font-bold md:text-xl min-h-screen flex flex-col items-center justify-start text-center space-y-4 pt-6 md:space-y-6">
-    <h2 class="text-lg md:text-2xl px-4 text-yellow-200">Do nothing for one minute, besides relax...</h2> 
+    <h2 class="text-lg md:text-2xl px-4 text-yellow-200">Do nothing for one minute, besides relax...</h2>
     <p>...and listen to the gray-colored thrush from Guatemala, if you'd like!</p>
     <p id="countdown-timer" class="text-2xl">1:00</p>
     <button id="restart" type="button" class="text-yellow-200 bg-gray-700 px-2 py-1 rounded-md font-bold hover:text-yellow-400">Restart</button>
@@ -76,19 +76,32 @@
     <div class="w-full max-w-xs md:max-w-2xl">
         <img class="max-w-xs md:max-w-2xl rounded mx-auto block" src="./static/images/clay-colored-thrush.jpg" alt="clay-colored thrush" />
         <div class="flex items-center justify-between w-full pt-1 font-semibold text-yellow-200 text-xs italic">
-            <a href="https://en.wikipedia.org/wiki/File:Clay-coloured_thrush_(Turdus_grayi_casius)_2.jpg" 
+            <a href="https://en.wikipedia.org/wiki/File:Clay-coloured_thrush_(Turdus_grayi_casius)_2.jpg"
                 target="_blank"
                 rel="nofollow noreferred noopener"
                 class="hover:text-yellow-400"
             >
             Photographer: Charles J. Sharp</a>
-            <a href="https://freesound.org/s/76378/" 
+            <a href="https://freesound.org/s/76378/"
                 target="_blank"
                 rel="nofollow noreferred noopener"
                 class="hover:text-yellow-400"
             >
             Audio: soundhog</a>
         </div>
+    </div>
+
+    <p>Or listen to other soothing sounds from Guatemala.</p>
+    <div class="w-full mx-auto flex items-center justify-center">
+      <iframe
+        src="https://www.youtube.com/embed/InNp3_nxkcI"
+        title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        width="370"
+        height="205"
+      >
+      </iframe>
     </div>
   </main>
   <footer class="flex flex-col items-center justify-center mt-12 bg-purple-700 text-white text-sm py-12 space-y-4">
@@ -111,7 +124,7 @@
     </footer>
     <script>
         const countdownTimer = document.getElementById('countdown-timer')
-        
+
         let interval
 
         function countdown() {
