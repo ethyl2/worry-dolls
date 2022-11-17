@@ -1,7 +1,7 @@
 
-.nav-link:active {
+/* .nav-link:active {
     color: aliceblue;
-}
+} */
 
 section#tellUrWorries, section#history, section#mentalHealth {
     scroll-margin-top: 70px; /*To prevent navigated sections scrolling up behind the fixed header*/
@@ -9,15 +9,6 @@ section#tellUrWorries, section#history, section#mentalHealth {
 
 .worryForm label {
     font-weight: bolder;
-}
-
-label mark {
-    background-color: darkgreen;
-    padding: 0.75em;
-    border-radius: 1em;
-    color: white;
-    margin: 1rem;
-    display: block;
 }
 
 .worryForm textarea {
@@ -32,12 +23,6 @@ label mark {
 .button {
     text-align: center;
 }
-
-button {
-    background-color: darkgreen;
-    border: 1px solid white;
-}
-
 
 @media(max-width: 500px) {
   section#tellUrWorries {
