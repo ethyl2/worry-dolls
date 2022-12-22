@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Gratitude Journal | Virtual Worry Dolls</title>
+        <meta name="description" content="Take a moment to express gratitude and relieve stress">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- FAVICON -->
+        <!-- Favicon image taken from https://www.reshot.com/free-svg-icons/item/playing-with-doll-ERYF574XCH/ -->
+        <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+        <link rel="manifest" href="static/favicon/site.webmanifest">
+
+        <!-- SOCIAL MEDIA INTEGRATION -->
+        <!-- Facebook, LinkedIn, Google -->
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Gratitude Journal | Virtual Worry Dolls" />
+        <meta property="og:description" content="Take a moment to express gratitude and relieve stress" />
+        <meta name="image" property="og:image" content="https://ethyl2.github.io/worry-dolls/static/images/worry-dolls-og.png" />
+        <meta property="og:image:alt" content="Virtual Worry Dolls" />
+        <meta property="og:url" content="https://ethyl2.github.io/worry-dolls/gratitude-journal.html" />
+        <meta property="og:site_name" content="Virtual Worry Dolls" />
+        <meta name="author" content="Heather Nuffer">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Virtual Worry Dolls">
+        <meta name="twitter:description" content="Take a moment to express gratitude and relieve stress">
+        <meta name="twitter:image" content="https://ethyl2.github.io/worry-dolls/static/images/worry-dolls-og.png">
+        <meta name="twitter:image:alt" content="Virtual Worry Dolls">
+        <meta name="twitter:creator" content="@ethyl22000">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+       
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  colors: {
+                  },
+                  fontFamily: {
+                   annie: "'Annie Use Your Telescope', cursive",
+                  }
+                }
+              }
+            }
+          </script>
+    </head>
+    <body class="bg-black min-h-screen">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav class="bg-gradient-to-b from-purple-900 to-purple-700 shadow-lg text-yellow-300">
+            <div class="mx-auto px-4 container">
+              <div class="flex justify-between">
+                <div class="flex space-x-7 justify-between w-full">
+                  <div>
+                    <!-- Website Logo -->
+                    <a href="./index.html#top" class="flex items-center py-4 px-2">
+                      <img src="./static/images/doll1.png" alt="Logo" class="h-8 w-8 mr-2">
+                      <span class="font-semibold text-yellow-300 text-xl smooth-scroll xl:text-5xl">Virtual Worry Dolls</span>
+                    </a>
+                  </div>
+                  <!-- Primary Desktop Navbar items -->
+                  <div class="hidden lg:flex items-center space-x-1 text-white text-sm xl:text-base">
+                    <a
+                      href="./index.html#top"
+                      class="py-4 px-2 font-semibold hover:text-green-500 smooth-scroll border-b-4 border-transparent"
+                    >
+                      Home
+                    </a>
+                    <a
+                      href="./index.html#tellUrWorries"
+                      class="py-4 px-2 font-semibold hover:text-green-500 transition duration-300 smooth-scroll border-b-4 border-transparent"
+                    >
+                      Tell Your Worries
+                    </a>
+                    <a
+                      href="./index.html#mentalHealth"
+                      class="py-4 px-2 font-semibold hover:text-green-500 transition duration-300 smooth-scroll border-b-4 border-transparent"
+                    >
+                      Mental Health Resources
+                    </a>
+                    <a
+                      href="./index.html#history"
+                      class="py-4 px-2 font-semibold hover:text-green-500 transition duration-300 smooth-scroll border-b-4 border-transparent"
+                    >
+                      History
+                    </a>
+                    <a
+                      href="./do-nothing.html"
+                      class="py-4 px-2 font-semibold hover:text-green-500 transition duration-300 smooth-scroll border-b-4 border-transparent"
+                    >
+                      Do Nothing
+                    </a>
+                    <a
+                      href="#"
+                      class="active py-4 px-2 font-semibold hover:text-green-500 text-yellow-300  border-yellow-300 transition duration-300 border-b-4 border-transparent"
+                    >
+                      Gratitude
+                    </a>
+                  </div>
+                </div>
+        
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex flex-shrink-0 mobile-menu-button" id="mobile-menu-button">
+                  <button class="relative group flex-shrink-0 pt-2">
+                    <div
+                      class="flex-shrink-0 relative flex flex-col overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all ring-0 ring-gray-300 hover:ring-8 group-focus:ring-4 ring-opacity-30 duration-200">
+                      <div class="transform transition-all duration-150 overflow-hidden -translate-y-5 group-focus:translate-y-3 text-green-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6h-6 w-6 animate-bounce text-green-500" fill="none"
+                          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+        
+                      <div
+                        class="flex flex-col justify-between w-5 h-5 transform transition-all duration-300 origin-center overflow-hidden -translate-y-3">
+                        <div
+                          class="bg-white mb-1.5 h-0.5 w-7 transform transition-all duration-300 origin-left group-focus:translate-y-6">
+                        </div>
+                        <div
+                          class="bg-white mb-1.5 h-0.5 w-7 rounded transform transition-all duration-300 group-focus:translate-y-6 delay-75">
+                        </div>
+                        <div
+                          class="bg-white h-0.5 w-7 transform transition-all duration-300 origin-left group-focus:translate-y-6 delay-100">
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- mobile menu -->
+            <div class="hidden mobile-menu">
+              <ul>
+                <li>
+                  <a
+                    href="./index.html#top"
+                    class="block text-sm px-2 py-4 font-semibold smooth-scroll hover:bg-green-500 transition duration-300"
+                  >Home</a>
+                </li>
+                <li>
+                  <a
+                    href="./index.html#tellUrWorries"
+                    class="block text-sm px-2 py-4 hover:bg-green-500 smooth-scroll transition duration-300"
+                  >Tell Your Worries
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="./index.html#mentalHealth"
+                    class="block text-sm px-2 py-4 hover:bg-green-500 smooth-scroll transition duration-300"
+                  >Mental Health Resources
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="./index.html#history"
+                    class="block text-sm px-2 py-4 hover:bg-green-500 smooth-scroll transition duration-300"
+                  >History
+                  </a>
+                </li>
+                <li>
+                  <a href="./do-nothing.html"
+                    class="block text-sm px-2 py-4 hover:bg-green-500 smooth-scroll transition duration-300">Do Nothing</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold smooth-scroll">Gratitude Journal</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+        
+        <header class="w-full font-annie font-bold text-lg md:text-4xl bg-purple-900 text-white text-center pt-6 sm:text-3xl md:pb-6 pb-4 lg:pb-4">
+        <h1>Gratitude Journal</h1>
+        </header>
+
+        <main class="container mx-auto text-white font-annie py-12 text-center">
+            <p class="text-xl md:text-3xl font-bold pb-6 px-4">Combat stress by taking a moment to reflect on the things you appreciate in your life.</p>
+
+            <h3 class="text-lg md:text-5xl font-bold text-yellow-200 pb-5">5 Senses</h3>
+            <p class="text-base px-4 md:text-3xl">What is something that you are grateful for today that you can...</p>
+            <form class="flex flex-col items-center justify-center space-y-4 text-xl md:text-2xl pt-6 max-w-xl mx-auto px-4">
+                <div class="w-full bg-purple-700 grid grid-cols-2 p-2 rounded">
+                    <label for="see" class="font-semibold tracking-wider">👁️ see?</label>
+                    <input type="text" name="see" id="see" class="text-black p-1 px-2 rounded shadow" required>
+                </div>
+                <div class="w-full bg-purple-800 grid grid-cols-2 p-2 rounded">
+                    <label for="hear" class="font-semibold tracking-wider">👂 hear?</label>
+                    <input type="text" name="hear" id="hear" class="text-black p-1 px-2 rounded shadow"  required>   
+                </div>
+                
+                <div class="w-full bg-indigo-800 grid grid-cols-2 p-2 rounded">
+                    <label for="smell" class="font-semibold tracking-wider">👃 smell?</label>
+                    <input type="text" name="smell" id="smell" class="text-black p-1 px-2 rounded shadow"  required>
+                </div>
+                
+                <div class="w-full bg-indigo-700 grid grid-cols-2 p-2 rounded">
+                    <label for="taste" class="font-semibold tracking-wider">👅 taste?</label>
+                    <input type="text" name="taste" id="taste" class="text-black p-1 px-2 rounded shadow" required>
+                </div>
+                
+                <div class="w-full bg-blue-700 grid grid-cols-2 p-2 rounded">
+                    <label for="touch" class="font-semibold tracking-wider"> 🖐️ touch?</label>
+                    <input type="text" name="touch" id="touch" class="text-black p-1 px-2 rounded shadow" required>
+                </div>
+                
+                <input id="submit" type="submit" value="Submit" class="border border-white px-2 py-1 rounded hover:bg-gray-800">
+            </form>
+
+            <section class="mt-16 w-full max-w-lg text-black mx-auto text-2xl md:text-4xl px-4 flex flex-col">
+                <div class="bg-white w-full rounded mx-auto text-2xl md:text-4xl px-4 py-8 flex flex-col space-y-4">
+                    <p class="text-right" id="todays-date"></p>
+                    <p class="text-left">Dear Diary,</p>
+                    <p class="text-left">Today I am grateful for: 
+                        <span id="see-journal">👁️</span>,
+                        <span id="hear-journal">👂</span>, 
+                        <span id="smell-journal">👃</span>, 
+                        <span id="taste-journal">👅</span>, and 
+                        <span id="touch-journal">🖐️</span>.
+                    </p>
+                    <div>
+                        <p class="text-left pt-4">Love,</p>
+                        <p class="text-left">Me</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="flex flex-col items-center justify-center mt-12 bg-purple-700 text-white text-sm py-12 space-y-4">
+            <a href="https://github.com/ethyl2/worry-dolls" target="_blank" rel="noopener noreferrer" class="hover:bg-yellow-600 p-1 rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                focusable="false" width="1.73em" height="1.5em" style="
+                            -ms-transform: rotate(360deg);
+                            -webkit-transform: rotate(360deg);
+                            transform: rotate(360deg);
+                          " preserveAspectRatio="xMidYMid meet" viewBox="0 0 1227.825 1000">
+                <path
+                  d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
+                  fill="white" />
+              </svg>
+              <span class="sr-only">GitHub</span>
+            </a>
+            <a href="./disclaimer.html" target="_blank" class="text-xs underline hover:text-yellow-200">Disclaimer</a>
+            <p>Copyright <span id="current-year">2022</span> Heather Nuffer et al.</p>
+        
+          </footer>
+        <script>
+            const hamburgerBtn = document.getElementById("mobile-menu-button");
+            const mobileMenu = document.querySelector(".mobile-menu");
+
+            hamburgerBtn.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
+            });
+
+            const dataFromSession = JSON.parse(window.sessionStorage.getItem('data'))
+            
+            const submitButton = document.getElementById('submit')
+            const seeJournal = document.getElementById('see-journal')
+            const hearJournal = document.getElementById('hear-journal') 
+            const smellJournal = document.getElementById('smell-journal')
+            const tasteJournal = document.getElementById('taste-journal')
+            const touchJournal = document.getElementById('touch-journal')
+
+            const todaysDateEl = document.getElementById('todays-date')
+            todaysDateEl.textContent = getTodaysDate()
+
+
+            if (dataFromSession) {
+                seeJournal.textContent = dataFromSession.see
+                hearJournal.textContent = dataFromSession.hear  
+                smellJournal.textContent = dataFromSession.smell    
+                tasteJournal.textContent = dataFromSession.taste
+                touchJournal.textContent = dataFromSession.touch
+            }
+
+            submitButton.addEventListener('click', (e) => {
+                e.preventDefault()
+                const see = document.getElementById('see').value.length ? document.getElementById('see').value : '👁️'
+                const hear = document.getElementById('hear').value.length ? document.getElementById('hear').value : '👂'
+                const smell = document.getElementById('smell').value.length ? document.getElementById('smell').value : '👃'
+                const taste = document.getElementById('taste').value.length ? document.getElementById('taste').value : '👅'
+                const touch = document.getElementById('touch').value.length ? document.getElementById('touch').value : '🖐️'
+                const data = {
+                    see,
+                    hear,
+                    smell,
+                    taste,
+                    touch
+                }
+
+                window.sessionStorage.setItem('data', JSON.stringify(data))
+                
+                seeJournal.textContent = see
+                hearJournal.textContent = hear  
+                smellJournal.textContent = smell    
+                tasteJournal.textContent = taste
+                touchJournal.textContent = touch
+
+            })
+
+            function getCurrentYear() {
+            const currentYear = new Date().getFullYear()
+            document.getElementById('current-year').textContent = currentYear
+            }
+
+            getCurrentYear()
+
+            function getTodaysDate() {
+                // get today's date 
+                const today = new Date()
+
+                // get today's day of the week  
+                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                const day = today.getDay()
+
+                // get name of today's month
+                const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+                const month = today.getMonth()
+
+                return `${days[day]}, ${today.getDate()} ${months[month]} ${today.getFullYear()}`
+            }
+        </script>
+    </body>
+</html>
