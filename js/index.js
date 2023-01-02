@@ -28,11 +28,14 @@ const worriesList = document.getElementById('worries-list')
 const reviewButton = document.getElementById('review-worries')
 const reviewingDollsEl = document.getElementById('reviewing-dolls')
 const reviewButtonMessageEl = document.getElementById('review-button-message')
+const clearButton = document.getElementById('clear-worries')
+const reviewWorriesSection = document.getElementById('review-worries-section')
+let worryArray = []
 
 function init() {
   getCurrentYear()
   const worriesFromSession = JSON.parse(window.sessionStorage.getItem('worries'))
-  let worryArray = worriesFromSession ?? []
+  worryArray = worriesFromSession ?? []
   const worryForm = document.getElementById('worry-form')
   const worryInput = document.getElementById('worry')
 
@@ -40,8 +43,7 @@ function init() {
   const listeningDollMessage = document.getElementById('listening-doll-message')
   const submitWorryButton = document.getElementById('submit-worry')
   const successMessageEl = document.getElementById('success-message')
-  const reviewWorriesSection = document.getElementById('review-worries-section')
-
+  
 
   if (worryArray.length > 0) {
     reviewWorriesSection.classList.remove('hidden')
@@ -66,13 +68,25 @@ function init() {
 
   worryForm.addEventListener('submit', (e) => {
     e.preventDefault()
+  
+    // Add worry to worry array & session storage
     worryArray.push(worryInput.value.trim())
     window.sessionStorage.setItem('worries', JSON.stringify(worryArray))
+
+    // Reset form & display success message
     worryInput.value = ''
+    worryInput.classList.add('hidden')
+
     submitWorryButton.classList.add('hidden')
     successMessageEl.classList.remove('hidden')
     successMessageEl.classList.add('block')
+    listeningDollMessage.textContent = 'Thank you for sharing your worries with me!'
+
+    // Show review worries section
     reviewWorriesSection.classList.remove('hidden')
+    refreshWorriesList()
+
+    // Hide form after 1.25 seconds
     setTimeout(() => {
       submitWorryButton.classList.remove('hidden')
       submitWorryButton.classList.add('block')
@@ -80,30 +94,38 @@ function init() {
       successMessageEl.classList.add('hidden')
       worryForm.classList.add('invisible')
       worryForm.classList.remove('visible')
-    }, 1000)
+      worryInput.classList.remove('hidden')
+    }, 1250)
   })
 
-
   reviewingDollsEl.addEventListener('click', toggleShowWorries)
-
 }
 
 function toggleShowWorries() {
   showWorries = !showWorries
   clearWorriesUl()
   if (showWorries) {
-    const worries = JSON.parse(window.sessionStorage.getItem('worries'))
-
-    if (worries) {
-      Array.from(worries).forEach(worry => {
-        const listEl = document.createElement('li')
-        listEl.textContent = `"${worry}"`
-        worriesList.append(listEl)
-      })
-    }
+    refreshWorriesList()
     reviewButtonMessageEl.textContent = "Send your worries back"
+    worriesList.classList.remove('hidden')
+    clearButton.classList.remove('hidden')
   } else {
     reviewButtonMessageEl.textContent = "Review what you've told the worry dolls"
+    worriesList.classList.add('hidden')
+    clearButton.classList.add('hidden')
+  }
+}
+
+function refreshWorriesList() {
+  clearWorriesUl()
+  const worries = JSON.parse(window.sessionStorage.getItem('worries'))
+  
+  if (worries) {
+    Array.from(worries).forEach(worry => {
+      const listEl = document.createElement('li')
+      listEl.textContent = `"${worry}"`
+      worriesList.append(listEl)
+    })
   }
 }
 
@@ -114,7 +136,15 @@ function clearWorriesUl() {
   }
 }
 
+// Clear worries from worry array & session storage and hide review worries section
+clearButton.addEventListener('click', () => {
+  window.sessionStorage.removeItem('worries')
+  clearWorriesUl()
+  reviewWorriesSection.classList.add('hidden')
+  worryArray = []
+})
 
+// Smooth scroll
 const links = document.querySelectorAll(".smooth-scroll")
 
 for (const link of links) {
@@ -133,6 +163,7 @@ function linkClickHandler(e) {
   })
 }
 
+// Mobile menu
 const hamburgerBtn = document.getElementById("mobile-menu-button")
 const mobileMenu = document.querySelector(".mobile-menu")
 
