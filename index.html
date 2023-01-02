@@ -45,9 +45,13 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="styles.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap" rel="stylesheet">
+  <script src="./js/tailwind-config.js"></script>
 </head>
 
-<body class="bg-gradient-to-b from-gray-900 to-black">
+<body class="bg-gradient-to-b from-gray-900 to-black font-andika">
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -60,46 +64,52 @@
             <!-- Website Logo -->
             <a href="#top" class="flex items-center py-4 px-2 smooth-scroll">
               <img src="./static/images/doll1.png" alt="Logo" class="h-8 w-8 mr-2">
-              <span class="font-semibold text-yellow-300 text-xl xl:text-5xl">Virtual Worry Dolls</span>
+              <span class="font-semibold text-yellow-300 text-xl xl:text-4xl">Virtual Worry Dolls</span>
             </a>
           </div>
           <!-- Primary Desktop Navbar items -->
           <div class="hidden lg:flex items-center space-x-1 text-white text-sm xl:text-base">
             <a
               href="#top"
-              class="py-4 px-2 font-semibold hover:text-green-500 smooth-scroll border-b-4 border-transparent"
+              class="text-center py-4 px-2 font-semibold hover:text-green-500 smooth-scroll border-b-4 border-transparent"
             >
               Home
             </a>
             <a
               href="#tellUrWorries"
-              class="py-4 px-2 font-semibold hover:text-green-500 transition duration-300 smooth-scroll border-b-4 border-transparent"
+              class="text-center py-4 px-2 font-semibold hover:text-green-500 transition duration-300 smooth-scroll border-b-4 border-transparent"
             >
               Tell Your Worries
             </a>
             <a
               href="#mentalHealth"
-              class="py-4 px-2 font-semibold hover:text-green-500 transition duration-300 smooth-scroll border-b-4 border-transparent"
+              class="text-center py-4 px-2 font-semibold hover:text-green-500 transition duration-300 smooth-scroll border-b-4 border-transparent"
             >
               Mental Health Resources
             </a>
             <a
               href="#history"
-              class="py-4 px-2 font-semibold hover:text-green-500 transition duration-300 smooth-scroll border-b-4 border-transparent"
+              class="text-center py-4 px-2 font-semibold hover:text-green-500 transition duration-300 smooth-scroll border-b-4 border-transparent"
             >
               History
             </a>
             <a
               href="./do-nothing.html"
-              class="active py-4 px-2 font-semibold hover:text-green-500 border-transparent transition duration-300 border-b-4 border-transparent"
+              class="text-center active py-4 px-2 font-semibold hover:text-green-500 border-transparent transition duration-300 border-b-4 border-transparent"
             >
               Do Nothing
             </a>
             <a
               href="./gratitude-journal.html"
-              class="active py-4 px-2 font-semibold hover:text-green-500 border-transparent transition duration-300 border-b-4 border-transparent"
+              class="text-center active py-4 px-2 font-semibold hover:text-green-500 border-transparent transition duration-300 border-b-4 border-transparent"
             >
               Gratitude
+            </a>
+            <a
+              href="./eight-ball.html"
+              class="hidden text-center active py-4 px-2 font-semibold hover:text-green-500 border-transparent transition duration-300 border-b-4 border-transparent 2xl:flex"
+            >
+              Encouragement
             </a>
           </div>
         </div>
@@ -173,6 +183,11 @@
             class="block text-sm px-2 py-2 hover:bg-purple-500 font-semibold transition duration-300 hover:text-white"
           >Gratitude Journal</a>
         </li>
+        <li>
+          <a href="./eight-ball.html"
+            class="block text-sm px-2 py-2 hover:bg-purple-500 font-semibold transition duration-300 hover:text-white"
+          >Encouragement</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -230,13 +245,17 @@
       <form id="worry-form" class="max-w-sm mx-auto invisible">
 
         <div class="form-group worryForm rounded p-4 bg-gradient-to-b from-purple-700 to-purple-400 mx-auto">
-          <label class="text-center flex items-center justify-center" for="worry">
+          <label class="text-center flex items-center justify-center font-bold" for="worry">
             <img id="listening-doll" src="./static/images/doll1.png" alt="worry-doll" class="w-16 md:w-24" />
             <span id="listening-doll-message" class="triangle-border left">Please tell me your worries!! I'm listening!</span>
           </label>
           <div>
-            <textarea id="worry" type="text" class="form-control w-full"
-              placeholder="Start venting out..."></textarea>
+            <textarea 
+              id="worry"
+              class="form-control w-full italic mt-2.5 p-2.5 rounded-lg border-4 text-dark-green border-dark-green bg-white"
+              placeholder="Start venting out..." 
+            >
+            </textarea>
           </div>
           <div class="button flex items-center justify-center">
             <button
@@ -247,7 +266,10 @@
               SEND & YOUR WORRIES WILL BE GONE!
             </button>
           </div>
-          <p id="success-message" class="text-center font-semibold hidden" >Sent to the Worry Doll!</p>
+          <p 
+            id="success-message" 
+            class="text-lg text-center font-semibold hidden" 
+          >Sent to the Worry Doll!</p>
           <p class="italic text-xs text-center pt-2">*Please note that what you type here is only saved to your local browser storage; it is <span class="font-bold">not</span> sent to an outside server.</p>
         </div>
       </form>
@@ -280,7 +302,13 @@
       </button>
     </div>
 
-    <ul id="worries-list" class="text-white list-disc"></ul>
+    <ul id="worries-list" class="text-white list-disc hidden"></ul>
+    <button 
+      id="clear-worries" 
+      class="hidden text-white font-bold text-sm md:text-base px-4border-0 flex items-center justify-center py-4 bg-gray-800 w-80 md:w-96 mx-auto rounded hover:bg-gray-600 m-2 mt-6"
+    >
+      Clear All Worries
+    </button>
   </section>
 
   <!-- Mental Health Resources -->
